@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistentConfig">
+    <option name="historyConfigList">
+      <map>
+        <entry key="content">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ContentDao" />
+              <option name="daoPackage" value="com.zjw.tradeplatformv1.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Content" />
+              <option name="modelPackage" value="com.zjw.tradeplatformv1.pojo.entity" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="content" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="content_id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="content" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mybatis.mapper" />
+              <option name="xmlTargetFolder" value="$PROJECT_DIR$" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="forum">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ForumDao" />
+              <option name="daoPackage" value="com.zjw.tradeplatformv1.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Forum" />
+              <option name="modelPackage" value="com.zjw.tradeplatformv1.pojo.entity" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="forum" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="forum_id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="forum" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mybatis.mapper" />
+              <option name="xmlTargetFolder" value="$PROJECT_DIR$" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="reply">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="ReplyDao" />
+              <option name="daoPackage" value="com.zjw.tradeplatformv1.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="Reply" />
+              <option name="modelPackage" value="com.zjw.tradeplatformv1.pojo.entity" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="reply" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="reply_id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="reply" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="mybatis.mapper" />
+              <option name="xmlTargetFolder" value="$PROJECT_DIR$" />
+            </Config>
+          </value>
+        </entry>
+        <entry key="user">
+          <value>
+            <Config>
+              <option name="comment" value="true" />
+              <option name="daoMvnPath" value="src/main/java" />
+              <option name="daoName" value="UserDao" />
+              <option name="daoPackage" value="com.zjw.tradeplatformv1.dao" />
+              <option name="daoPostfix" value="Dao" />
+              <option name="daoTargetFolder" value="$PROJECT_DIR$" />
+              <option name="modelMvnPath" value="src/main/java" />
+              <option name="modelName" value="User" />
+              <option name="modelPackage" value="com.zjw.tradeplatformv1.pojo.entity" />
+              <option name="modelTargetFolder" value="$PROJECT_DIR$" />
+              <option name="mysql_8" value="true" />
+              <option name="name" value="user" />
+              <option name="needToStringHashcodeEquals" value="true" />
+              <option name="offsetLimit" value="true" />
+              <option name="overrideXML" value="true" />
+              <option name="primaryKey" value="user_id" />
+              <option name="projectFolder" value="$PROJECT_DIR$" />
+              <option name="tableName" value="user" />
+              <option name="xmlMvnPath" value="src/main/resources" />
+              <option name="xmlPackage" value="\mybatis\mapper" />
+              <option name="xmlTargetFolder" value="$PROJECT_DIR$" />
+            </Config>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="users">
+      <map>
+        <entry key="jdbc:mysql://localhost:3306/mysql_platform_db1?serverTimezone=GMT">
+          <value>
+            <User>
+              <option name="username" value="root" />
+            </User>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

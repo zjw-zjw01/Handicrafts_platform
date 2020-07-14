@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.tradeplatformv1.dao.ForumDao">
+  <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.Forum">
+    <id column="forum_id" jdbcType="INTEGER" property="forumId" />
+    <result column="forum_topic" jdbcType="VARCHAR" property="forumTopic" />
+    <result column="forum_image" jdbcType="VARCHAR" property="forumImage" />
+    <result column="forum_likes" jdbcType="VARCHAR" property="forumLikes" />
+    <result column="forum_type" jdbcType="VARCHAR" property="forumType" />
+    <result column="forum_others" jdbcType="VARCHAR" property="forumOthers" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.zjw.tradeplatformv1.pojo.entity.Forum">
+    <result column="forum_context" jdbcType="LONGVARCHAR" property="forumContext" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    forum_id, forum_topic, forum_image, forum_likes, forum_type, forum_others
+  </sql>
+  <sql id="Blob_Column_List">
+    forum_context
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from forum
+    where forum_id = #{forumId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultType="com.zjw.tradeplatformv1.pojo.entity.Forum">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM forum
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from forum
+    where forum_id = #{forumId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="forum_id" keyProperty="forumId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Forum" useGeneratedKeys="true">
+    insert into forum (forum_topic, forum_image, forum_likes, 
+      forum_type, forum_others, forum_context
+      )
+    values (#{forumTopic,jdbcType=VARCHAR}, #{forumImage,jdbcType=VARCHAR}, #{forumLikes,jdbcType=VARCHAR}, 
+      #{forumType,jdbcType=VARCHAR}, #{forumOthers,jdbcType=VARCHAR}, #{forumContext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="forum_id" keyProperty="forumId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Forum" useGeneratedKeys="true">
+    insert into forum
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="forumTopic != null">
+        forum_topic,
+      </if>
+      <if test="forumImage != null">
+        forum_image,
+      </if>
+      <if test="forumLikes != null">
+        forum_likes,
+      </if>
+      <if test="forumType != null">
+        forum_type,
+      </if>
+      <if test="forumOthers != null">
+        forum_others,
+      </if>
+      <if test="forumContext != null">
+        forum_context,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="forumTopic != null">
+        #{forumTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="forumImage != null">
+        #{forumImage,jdbcType=VARCHAR},
+      </if>
+      <if test="forumLikes != null">
+        #{forumLikes,jdbcType=VARCHAR},
+      </if>
+      <if test="forumType != null">
+        #{forumType,jdbcType=VARCHAR},
+      </if>
+      <if test="forumOthers != null">
+        #{forumOthers,jdbcType=VARCHAR},
+      </if>
+      <if test="forumContext != null">
+        #{forumContext,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.tradeplatformv1.pojo.entity.Forum">
+    update forum
+    <set>
+      <if test="forumTopic != null">
+        forum_topic = #{forumTopic,jdbcType=VARCHAR},
+      </if>
+      <if test="forumImage != null">
+        forum_image = #{forumImage,jdbcType=VARCHAR},
+      </if>
+      <if test="forumLikes != null">
+        forum_likes = #{forumLikes,jdbcType=VARCHAR},
+      </if>
+      <if test="forumType != null">
+        forum_type = #{forumType,jdbcType=VARCHAR},
+      </if>
+      <if test="forumOthers != null">
+        forum_others = #{forumOthers,jdbcType=VARCHAR},
+      </if>
+      <if test="forumContext != null">
+        forum_context = #{forumContext,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where forum_id = #{forumId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.zjw.tradeplatformv1.pojo.entity.Forum">
+    update forum
+    set forum_topic = #{forumTopic,jdbcType=VARCHAR},
+      forum_image = #{forumImage,jdbcType=VARCHAR},
+      forum_likes = #{forumLikes,jdbcType=VARCHAR},
+      forum_type = #{forumType,jdbcType=VARCHAR},
+      forum_others = #{forumOthers,jdbcType=VARCHAR},
+      forum_context = #{forumContext,jdbcType=LONGVARCHAR}
+    where forum_id = #{forumId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.Forum">
+    update forum
+    set forum_topic = #{forumTopic,jdbcType=VARCHAR},
+      forum_image = #{forumImage,jdbcType=VARCHAR},
+      forum_likes = #{forumLikes,jdbcType=VARCHAR},
+      forum_type = #{forumType,jdbcType=VARCHAR},
+      forum_others = #{forumOthers,jdbcType=VARCHAR}
+    where forum_id = #{forumId,jdbcType=INTEGER}
+  </update>
+</mapper>

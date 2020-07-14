@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.tradeplatformv1.dao.ReplyDao">
+  <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.Reply">
+    <id column="reply_id" jdbcType="INTEGER" property="replyId" />
+    <result column="reply_content_id" jdbcType="INTEGER" property="replyContentId" />
+    <result column="reply_user_id" jdbcType="INTEGER" property="replyUserId" />
+    <result column="reply_user_name" jdbcType="VARCHAR" property="replyUserName" />
+    <result column="reply_text" jdbcType="VARCHAR" property="replyText" />
+    <result column="reply_likes" jdbcType="VARCHAR" property="replyLikes" />
+    <result column="reply_others" jdbcType="VARCHAR" property="replyOthers" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    reply_id, reply_content_id, reply_user_id, reply_user_name, reply_text, reply_likes, 
+    reply_others
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from reply
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from reply
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="reply_id" keyProperty="replyId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Reply" useGeneratedKeys="true">
+    insert into reply (reply_content_id, reply_user_id, reply_user_name, 
+      reply_text, reply_likes, reply_others
+      )
+    values (#{replyContentId,jdbcType=INTEGER}, #{replyUserId,jdbcType=INTEGER}, #{replyUserName,jdbcType=VARCHAR}, 
+      #{replyText,jdbcType=VARCHAR}, #{replyLikes,jdbcType=VARCHAR}, #{replyOthers,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="reply_id" keyProperty="replyId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Reply" useGeneratedKeys="true">
+    insert into reply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="replyContentId != null">
+        reply_content_id,
+      </if>
+      <if test="replyUserId != null">
+        reply_user_id,
+      </if>
+      <if test="replyUserName != null">
+        reply_user_name,
+      </if>
+      <if test="replyText != null">
+        reply_text,
+      </if>
+      <if test="replyLikes != null">
+        reply_likes,
+      </if>
+      <if test="replyOthers != null">
+        reply_others,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="replyContentId != null">
+        #{replyContentId,jdbcType=INTEGER},
+      </if>
+      <if test="replyUserId != null">
+        #{replyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="replyUserName != null">
+        #{replyUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="replyText != null">
+        #{replyText,jdbcType=VARCHAR},
+      </if>
+      <if test="replyLikes != null">
+        #{replyLikes,jdbcType=VARCHAR},
+      </if>
+      <if test="replyOthers != null">
+        #{replyOthers,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.tradeplatformv1.pojo.entity.Reply">
+    update reply
+    <set>
+      <if test="replyContentId != null">
+        reply_content_id = #{replyContentId,jdbcType=INTEGER},
+      </if>
+      <if test="replyUserId != null">
+        reply_user_id = #{replyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="replyUserName != null">
+        reply_user_name = #{replyUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="replyText != null">
+        reply_text = #{replyText,jdbcType=VARCHAR},
+      </if>
+      <if test="replyLikes != null">
+        reply_likes = #{replyLikes,jdbcType=VARCHAR},
+      </if>
+      <if test="replyOthers != null">
+        reply_others = #{replyOthers,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.Reply">
+    update reply
+    set reply_content_id = #{replyContentId,jdbcType=INTEGER},
+      reply_user_id = #{replyUserId,jdbcType=INTEGER},
+      reply_user_name = #{replyUserName,jdbcType=VARCHAR},
+      reply_text = #{replyText,jdbcType=VARCHAR},
+      reply_likes = #{replyLikes,jdbcType=VARCHAR},
+      reply_others = #{replyOthers,jdbcType=VARCHAR}
+    where reply_id = #{replyId,jdbcType=INTEGER}
+  </update>
+</mapper>

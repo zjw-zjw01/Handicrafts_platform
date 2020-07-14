@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.tradeplatformv1.dao.UserDao">
+  <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.User">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_account" jdbcType="VARCHAR" property="userAccount" />
+    <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
+    <result column="user_number" jdbcType="VARCHAR" property="userNumber" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_age" jdbcType="VARCHAR" property="userAge" />
+    <result column="user_sex" jdbcType="VARCHAR" property="userSex" />
+    <result column="user_place" jdbcType="VARCHAR" property="userPlace" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, user_account, user_password, user_number, user_name, user_age, user_sex, 
+    user_place
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+    <select id="selectByUserAccount" resultType="com.zjw.tradeplatformv1.pojo.entity.User">
+      select
+      <include refid="Base_Column_List"/>
+      FROM user
+      WHERE user_account = #{userAccount,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.zjw.tradeplatformv1.pojo.entity.User" useGeneratedKeys="true">
+    insert into user (user_account, user_password, user_number, 
+      user_name, user_age, user_sex, 
+      user_place)
+    values (#{userAccount,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{userNumber,jdbcType=VARCHAR}, 
+      #{userName,jdbcType=VARCHAR}, #{userAge,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR}, 
+      #{userPlace,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="com.zjw.tradeplatformv1.pojo.entity.User" useGeneratedKeys="true">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userAccount != null">
+        user_account,
+      </if>
+      <if test="userPassword != null">
+        user_password,
+      </if>
+      <if test="userNumber != null">
+        user_number,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userAge != null">
+        user_age,
+      </if>
+      <if test="userSex != null">
+        user_sex,
+      </if>
+      <if test="userPlace != null">
+        user_place,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userAccount != null">
+        #{userAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userNumber != null">
+        #{userNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        #{userAge,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userPlace != null">
+        #{userPlace,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.tradeplatformv1.pojo.entity.User">
+    update user
+    <set>
+      <if test="userAccount != null">
+        user_account = #{userAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="userPassword != null">
+        user_password = #{userPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="userNumber != null">
+        user_number = #{userNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        user_age = #{userAge,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        user_sex = #{userSex,jdbcType=VARCHAR},
+      </if>
+      <if test="userPlace != null">
+        user_place = #{userPlace,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.User">
+    update user
+    set user_account = #{userAccount,jdbcType=VARCHAR},
+      user_password = #{userPassword,jdbcType=VARCHAR},
+      user_number = #{userNumber,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      user_age = #{userAge,jdbcType=VARCHAR},
+      user_sex = #{userSex,jdbcType=VARCHAR},
+      user_place = #{userPlace,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>
