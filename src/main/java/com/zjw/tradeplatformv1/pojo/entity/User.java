@@ -7,21 +7,55 @@ import java.io.Serializable;
  * @author 
  */
 public class User implements Serializable {
+    /**
+     * 唯一标识
+     */
     private Integer userId;
 
+    /**
+     * 账户
+     */
     private String userAccount;
 
+    /**
+     * 密码
+     */
     private String userPassword;
 
+    /**
+     * 电话
+     */
     private String userNumber;
 
+    /**
+     * 名称
+     */
     private String userName;
 
+    /**
+     * 年龄
+     */
     private String userAge;
 
+    /**
+     * 性别
+     */
     private String userSex;
 
+    /**
+     * 所在地
+     */
     private String userPlace;
+
+    /**
+     * 余额
+     */
+    private Integer userBalance;
+
+    /**
+     * 签名
+     */
+    private String userSign;
 
     private static final long serialVersionUID = 1L;
 
@@ -89,6 +123,22 @@ public class User implements Serializable {
         this.userPlace = userPlace;
     }
 
+    public Integer getUserBalance() {
+        return userBalance;
+    }
+
+    public void setUserBalance(Integer userBalance) {
+        this.userBalance = userBalance;
+    }
+
+    public String getUserSign() {
+        return userSign;
+    }
+
+    public void setUserSign(String userSign) {
+        this.userSign = userSign;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -108,7 +158,9 @@ public class User implements Serializable {
             && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
             && (this.getUserAge() == null ? other.getUserAge() == null : this.getUserAge().equals(other.getUserAge()))
             && (this.getUserSex() == null ? other.getUserSex() == null : this.getUserSex().equals(other.getUserSex()))
-            && (this.getUserPlace() == null ? other.getUserPlace() == null : this.getUserPlace().equals(other.getUserPlace()));
+            && (this.getUserPlace() == null ? other.getUserPlace() == null : this.getUserPlace().equals(other.getUserPlace()))
+            && (this.getUserBalance() == null ? other.getUserBalance() == null : this.getUserBalance().equals(other.getUserBalance()))
+            && (this.getUserSign() == null ? other.getUserSign() == null : this.getUserSign().equals(other.getUserSign()));
     }
 
     @Override
@@ -123,6 +175,8 @@ public class User implements Serializable {
         result = prime * result + ((getUserAge() == null) ? 0 : getUserAge().hashCode());
         result = prime * result + ((getUserSex() == null) ? 0 : getUserSex().hashCode());
         result = prime * result + ((getUserPlace() == null) ? 0 : getUserPlace().hashCode());
+        result = prime * result + ((getUserBalance() == null) ? 0 : getUserBalance().hashCode());
+        result = prime * result + ((getUserSign() == null) ? 0 : getUserSign().hashCode());
         return result;
     }
 
@@ -140,6 +194,8 @@ public class User implements Serializable {
         sb.append(", userAge=").append(userAge);
         sb.append(", userSex=").append(userSex);
         sb.append(", userPlace=").append(userPlace);
+        sb.append(", userBalance=").append(userBalance);
+        sb.append(", userSign=").append(userSign);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

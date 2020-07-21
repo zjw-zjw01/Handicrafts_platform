@@ -24,21 +24,14 @@ public class UserLoginController {
      * @return Map<String,Object>
      *     res,boolean
      *     msg,String
+     *     userID,Integer
+     *     userSign,String
      * </String,Object>
      */
     @RequestMapping(value = "/login")
     @ResponseBody
     public Map<String,Object> login(UserLoginVO userLoginVO){
-        Map<String,Object> map = new HashMap<String, Object>();
-        if(userService.loginVerify(userLoginVO)){
-            map.put("res",true);
-            map.put("msg","登录成功！");
-        }else {
-            map.put("res",false);
-            map.put("msg","登录失败！");
-        }
-        return map;
-
+        return userService.loginVerify(userLoginVO);
     }
 
 }
