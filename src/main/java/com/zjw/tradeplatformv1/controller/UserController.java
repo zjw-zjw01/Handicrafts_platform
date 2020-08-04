@@ -14,7 +14,7 @@ import java.util.Map;
 @Controller
 @RequestMapping(value = "/user")
 @CrossOrigin
-public class UserLoginController {
+public class UserController {
     @Resource
     UserService userService;
 
@@ -33,5 +33,7 @@ public class UserLoginController {
     public Map<String,Object> login(UserLoginVO userLoginVO){
         return userService.loginVerify(userLoginVO);
     }
+
+
 
 }
