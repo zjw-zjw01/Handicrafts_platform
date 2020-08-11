@@ -3,6 +3,7 @@ package com.zjw.tradeplatformv1.controller;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
 import com.zjw.tradeplatformv1.pojo.entity.Order;
 import com.zjw.tradeplatformv1.service.GoodsService;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -49,7 +50,41 @@ public class GoodsController {
     @RequestMapping("/placeOrder")
     @ResponseBody
     public Map<String,Object> placeOrder(Order order){
-        return goodsService.placeOrderService(order);
+        return goodsService.placeOrderCreate(order);
+    }
+
+    /**
+     * 发货收货
+     * @param state
+     * @param orderID
+     * @return
+     */
+    @RequestMapping("/stateChange")
+    @ResponseBody
+    public Map<String,Object> orderSend(String state ,Integer orderID){
+        return goodsService.orderSendSet(state,orderID);
+    }
+
+    /**
+     * 买家显示订单
+     * @param buyerID
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping("/showInBuyer")
+    public List<Order> orderShowInBuyer(Integer buyerID){
+        return goodsService.showInBuyer(buyerID);
+    }
+
+    /**
+     * 卖家显示订单
+     * @param sellerID
+     * @return
+     */
+    @RequestMapping("/showInSeller")
+    @ResponseBody
+    public List<Order> orderShowInSeller(Integer sellerID){
+        return goodsService.showInSeller(sellerID);
     }
 
 

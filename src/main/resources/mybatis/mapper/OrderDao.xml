@@ -27,6 +27,18 @@
     from order
     where order_number = #{orderNumber,jdbcType=INTEGER}
   </select>
+  <select id="selectByBuyerID" resultType="com.zjw.tradeplatformv1.pojo.entity.Order">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM "order"
+    WHERE order_buy_userid = #{buyID,jdbcType=INTEGER}
+  </select>
+  <select id="selectBySellerID" resultType="com.zjw.tradeplatformv1.pojo.entity.Order">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM "order"
+    WHERE order_userid = #{sellerID,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from order
     where order_number = #{orderNumber,jdbcType=INTEGER}

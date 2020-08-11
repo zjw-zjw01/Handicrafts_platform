@@ -5,6 +5,7 @@ import com.zjw.tradeplatformv1.dao.OrderDao;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
 import com.zjw.tradeplatformv1.pojo.entity.Order;
 import com.zjw.tradeplatformv1.service.GoodsService;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -32,13 +33,14 @@ public class GoodsServiceiplm implements GoodsService {
     }
 
     @Override
-    public Map<String, Object> placeOrderService(Order order) {
+    public Map<String, Object> placeOrderCreate(Order order) {
         Map<String,Object> map = new HashMap<>();
 
         //处理数据
         Date date = new Date();
         order.setCreateTime(date);
         order.setUpdateTime(date);
+        order.setOrderState("待发货");
         order.setVersion(1);
 
         //插入数据库
@@ -51,5 +53,31 @@ public class GoodsServiceiplm implements GoodsService {
         }
 
         return map;
+    }
+
+    @Override
+    public Map<String, Object> orderSendSet(String state,Integer orderID) {
+        Map<String,Object> map = new HashMap<>();
+
+        Order order = new Order();
+        order.setOrderState(state);
+        order.setOrderNumber(orderID);
+
+        if(orderDao.updateByPrimaryKeySelective(order) == 1){
+            map.put("msg","设置成功");
+        }else {
+            map.put("msg","设置失败");
+        }
+        return map;
+    }
+
+    @Override
+    public List<Order> showInBuyer(Integer buyerID) {
+        return orderDao.selectByBuyerID(buyerID);
+    }
+
+    @Override
+    public List<Order> showInSeller(Integer sellerID) {
+        return orderDao.selectBySellerID(sellerID);
     }
 }
