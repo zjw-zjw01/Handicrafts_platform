@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface GoodsService {
-    List<Goods> showByPage(Integer page);
+    List<Goods> showByPage(Integer page,Integer type);
     Goods showByOne(Integer goodsID);
     Map<String ,Object> placeOrderCreate(Order order);
     Map<String,Object> orderSendSet(String state,Integer orderID);

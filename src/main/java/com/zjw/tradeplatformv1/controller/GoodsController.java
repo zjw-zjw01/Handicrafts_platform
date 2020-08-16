@@ -21,13 +21,13 @@ public class GoodsController {
 
     /**
      * 商品显示控制器
-     * @param page 页数，一页两条数据
+     * @param page 页数，一页6条数据
      * @return
      */
     @RequestMapping("/showByPage")
     @ResponseBody
-    public List<Goods> showByPage(Integer page){
-        return goodsService.showByPage(page);
+    public List<Goods> showByPage(Integer page,Integer type){
+        return goodsService.showByPage(page,type);
     }
 
     /**

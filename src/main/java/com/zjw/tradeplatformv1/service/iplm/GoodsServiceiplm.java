@@ -23,8 +23,8 @@ public class GoodsServiceiplm implements GoodsService {
     OrderDao orderDao;
 
     @Override
-    public List<Goods> showByPage(Integer page) {
-        return goodsDao.selectByPage((page-1)*2);
+    public List<Goods> showByPage(Integer page, Integer type) {
+        return goodsDao.selectByPage((page-1)*6,type);
     }
 
     @Override
