@@ -21,9 +21,8 @@ public class WebSocketController {
     SimpMessagingTemplate template;
     /**
      * @Description:这个方法是接收客户端发送功公告的WebSocket请求，使用的是@MessageMapping
-     * @Date: 2019/5/31
      */
-    @MessageMapping("/transfer")//客户端访问服务端的时候config中配置的服务端接收前缀也要加上 例：/app/change-notice
+    @MessageMapping("/transfer")//客户端访问服务端的时候config中配置的服务端接收前缀也要加上 例：/app/transfer
     public void greeting(Message message){
         System.out.println("服务端接收到消息："+message.toString());
 

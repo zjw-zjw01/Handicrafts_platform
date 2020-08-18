@@ -1,10 +1,12 @@
 package com.zjw.tradeplatformv1.controller;
 
+import com.zjw.tradeplatformv1.pojo.VO.GoodsVO;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
 import com.zjw.tradeplatformv1.pojo.entity.Order;
 import com.zjw.tradeplatformv1.service.GoodsService;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -14,6 +16,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/goods")
+@CrossOrigin
 public class GoodsController {
 
     @Resource
@@ -26,7 +29,7 @@ public class GoodsController {
      */
     @RequestMapping("/showByPage")
     @ResponseBody
-    public List<Goods> showByPage(Integer page,Integer type){
+    public List<GoodsVO> showByPage(Integer page, Integer type){
         return goodsService.showByPage(page,type);
     }
 

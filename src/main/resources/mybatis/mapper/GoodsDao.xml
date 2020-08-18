@@ -24,9 +24,9 @@
     from goods
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </select>
-  <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.entity.Goods">
+  <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsVO">
     select
-    <include refid="Base_Column_List"/>
+    goods_id,goods_name,goods_image
     FROM goods
     WHERE goods_type = #{type,jdbcType=INTEGER}
     limit #{pageIndex},6

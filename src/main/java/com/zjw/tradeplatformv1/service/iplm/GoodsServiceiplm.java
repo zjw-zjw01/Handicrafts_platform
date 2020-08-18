@@ -2,6 +2,7 @@ package com.zjw.tradeplatformv1.service.iplm;
 
 import com.zjw.tradeplatformv1.dao.GoodsDao;
 import com.zjw.tradeplatformv1.dao.OrderDao;
+import com.zjw.tradeplatformv1.pojo.VO.GoodsVO;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
 import com.zjw.tradeplatformv1.pojo.entity.Order;
 import com.zjw.tradeplatformv1.service.GoodsService;
@@ -23,7 +24,7 @@ public class GoodsServiceiplm implements GoodsService {
     OrderDao orderDao;
 
     @Override
-    public List<Goods> showByPage(Integer page, Integer type) {
+    public List<GoodsVO> showByPage(Integer page, Integer type) {
         return goodsDao.selectByPage((page-1)*6,type);
     }
 
