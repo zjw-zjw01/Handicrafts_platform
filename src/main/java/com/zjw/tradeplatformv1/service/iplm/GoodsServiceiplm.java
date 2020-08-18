@@ -25,7 +25,7 @@ public class GoodsServiceiplm implements GoodsService {
 
     @Override
     public List<GoodsVO> showByPage(Integer page, Integer type) {
-        return goodsDao.selectByPage((page-1)*6,type);
+        return goodsDao.selectByPage((page-1)*6,type);/**/
     }
 
     @Override

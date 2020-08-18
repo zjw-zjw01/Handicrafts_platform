@@ -16,7 +16,7 @@ public interface GoodsDao {
 
     Goods selectByPrimaryKey(Integer goodsId);
 
-    List<GoodsVO> selectByPage(Integer pageIndex, Integer type);
+    List<GoodsVO> selectByPage(Integer page,Integer type);
 
     int updateByPrimaryKeySelective(Goods record);
 

@@ -25,12 +25,19 @@
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </select>
   <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsVO">
+    SELECT
+    goods_id,goods_name,goods_image
+    FROM goods
+    WHERE goods_type = #{param2}
+    limit #{param1},6
+  </select>
+  <!--<select id="selectByPage" parameterType="java.lang.Integer" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsVO">
     select
     goods_id,goods_name,goods_image
     FROM goods
-    WHERE goods_type = #{type,jdbcType=INTEGER}
+    WHERE goods_type = #{goodsType}
     limit #{pageIndex},6
-  </select>
+  </select>-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods
     where goods_id = #{goodsId,jdbcType=INTEGER}
