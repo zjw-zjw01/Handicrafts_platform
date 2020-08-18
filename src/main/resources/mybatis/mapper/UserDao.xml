@@ -7,45 +7,39 @@
     <result column="user_password" jdbcType="VARCHAR" property="userPassword" />
     <result column="user_number" jdbcType="VARCHAR" property="userNumber" />
     <result column="user_name" jdbcType="VARCHAR" property="userName" />
-    <result column="user_age" jdbcType="VARCHAR" property="userAge" />
+    <result column="user_image" jdbcType="VARCHAR" property="userImage" />
     <result column="user_sex" jdbcType="VARCHAR" property="userSex" />
     <result column="user_place" jdbcType="VARCHAR" property="userPlace" />
     <result column="user_balance" jdbcType="INTEGER" property="userBalance" />
     <result column="user_sign" jdbcType="VARCHAR" property="userSign" />
   </resultMap>
   <sql id="Base_Column_List">
-    user_id, user_account, user_password, user_number, user_name, user_age, user_sex, 
+    user_id, user_account, user_password, user_number, user_name, user_image, user_sex, 
     user_place, user_balance, user_sign
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.zjw.tradeplatformv1.pojo.VO.UserVO">
     select 
-    <include refid="Base_Column_List" />
+    user_image,user_name,user_balance,user_place
     from user
     where user_id = #{userId,jdbcType=INTEGER}
   </select>
-  <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.entity.User">
-    SELECT
-    <include refid="Base_Column_List"/>
-    FROM user
-    limit #{pageIndex},2
-  </select>
-  <select id="selecrByAccount" resultType="com.zjw.tradeplatformv1.pojo.entity.User">
-    SELECT
-    <include refid="Base_Column_List"/>
-    FROM user
-    WHERE user_account = #{account,jdbcType=VARCHAR}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selecrByAccount" resultType="com.zjw.tradeplatformv1.pojo.entity.User">
+      SELECT
+      <include refid="Base_Column_List"/>
+      FROM user
+      WHERE user_account = #{account}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.zjw.tradeplatformv1.pojo.entity.User" useGeneratedKeys="true">
     insert into user (user_account, user_password, user_number, 
-      user_name, user_age, user_sex, 
+      user_name, user_image, user_sex, 
       user_place, user_balance, user_sign
       )
     values (#{userAccount,jdbcType=VARCHAR}, #{userPassword,jdbcType=VARCHAR}, #{userNumber,jdbcType=VARCHAR}, 
-      #{userName,jdbcType=VARCHAR}, #{userAge,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR}, 
+      #{userName,jdbcType=VARCHAR}, #{userImage,jdbcType=VARCHAR}, #{userSex,jdbcType=VARCHAR}, 
       #{userPlace,jdbcType=VARCHAR}, #{userBalance,jdbcType=INTEGER}, #{userSign,jdbcType=VARCHAR}
       )
   </insert>
@@ -64,8 +58,8 @@
       <if test="userName != null">
         user_name,
       </if>
-      <if test="userAge != null">
-        user_age,
+      <if test="userImage != null">
+        user_image,
       </if>
       <if test="userSex != null">
         user_sex,
@@ -93,8 +87,8 @@
       <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="userAge != null">
-        #{userAge,jdbcType=VARCHAR},
+      <if test="userImage != null">
+        #{userImage,jdbcType=VARCHAR},
       </if>
       <if test="userSex != null">
         #{userSex,jdbcType=VARCHAR},
@@ -125,8 +119,8 @@
       <if test="userName != null">
         user_name = #{userName,jdbcType=VARCHAR},
       </if>
-      <if test="userAge != null">
-        user_age = #{userAge,jdbcType=VARCHAR},
+      <if test="userImage != null">
+        user_image = #{userImage,jdbcType=VARCHAR},
       </if>
       <if test="userSex != null">
         user_sex = #{userSex,jdbcType=VARCHAR},
@@ -149,7 +143,7 @@
       user_password = #{userPassword,jdbcType=VARCHAR},
       user_number = #{userNumber,jdbcType=VARCHAR},
       user_name = #{userName,jdbcType=VARCHAR},
-      user_age = #{userAge,jdbcType=VARCHAR},
+      user_image = #{userImage,jdbcType=VARCHAR},
       user_sex = #{userSex,jdbcType=VARCHAR},
       user_place = #{userPlace,jdbcType=VARCHAR},
       user_balance = #{userBalance,jdbcType=INTEGER},

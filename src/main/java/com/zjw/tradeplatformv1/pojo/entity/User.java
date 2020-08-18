@@ -33,9 +33,9 @@ public class User implements Serializable {
     private String userName;
 
     /**
-     * 年龄
+     * 头像
      */
-    private String userAge;
+    private String userImage;
 
     /**
      * 性别
@@ -99,12 +99,12 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-    public String getUserAge() {
-        return userAge;
+    public String getUserImage() {
+        return userImage;
     }
 
-    public void setUserAge(String userAge) {
-        this.userAge = userAge;
+    public void setUserImage(String userImage) {
+        this.userImage = userImage;
     }
 
     public String getUserSex() {
@@ -156,7 +156,7 @@ public class User implements Serializable {
             && (this.getUserPassword() == null ? other.getUserPassword() == null : this.getUserPassword().equals(other.getUserPassword()))
             && (this.getUserNumber() == null ? other.getUserNumber() == null : this.getUserNumber().equals(other.getUserNumber()))
             && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
-            && (this.getUserAge() == null ? other.getUserAge() == null : this.getUserAge().equals(other.getUserAge()))
+            && (this.getUserImage() == null ? other.getUserImage() == null : this.getUserImage().equals(other.getUserImage()))
             && (this.getUserSex() == null ? other.getUserSex() == null : this.getUserSex().equals(other.getUserSex()))
             && (this.getUserPlace() == null ? other.getUserPlace() == null : this.getUserPlace().equals(other.getUserPlace()))
             && (this.getUserBalance() == null ? other.getUserBalance() == null : this.getUserBalance().equals(other.getUserBalance()))
@@ -172,7 +172,7 @@ public class User implements Serializable {
         result = prime * result + ((getUserPassword() == null) ? 0 : getUserPassword().hashCode());
         result = prime * result + ((getUserNumber() == null) ? 0 : getUserNumber().hashCode());
         result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
-        result = prime * result + ((getUserAge() == null) ? 0 : getUserAge().hashCode());
+        result = prime * result + ((getUserImage() == null) ? 0 : getUserImage().hashCode());
         result = prime * result + ((getUserSex() == null) ? 0 : getUserSex().hashCode());
         result = prime * result + ((getUserPlace() == null) ? 0 : getUserPlace().hashCode());
         result = prime * result + ((getUserBalance() == null) ? 0 : getUserBalance().hashCode());
@@ -191,7 +191,7 @@ public class User implements Serializable {
         sb.append(", userPassword=").append(userPassword);
         sb.append(", userNumber=").append(userNumber);
         sb.append(", userName=").append(userName);
-        sb.append(", userAge=").append(userAge);
+        sb.append(", userImage=").append(userImage);
         sb.append(", userSex=").append(userSex);
         sb.append(", userPlace=").append(userPlace);
         sb.append(", userBalance=").append(userBalance);

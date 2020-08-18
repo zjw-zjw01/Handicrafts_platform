@@ -2,6 +2,7 @@ package com.zjw.tradeplatformv1.service.iplm;
 
 import com.zjw.tradeplatformv1.dao.UserDao;
 import com.zjw.tradeplatformv1.pojo.VO.UserLoginVO;
+import com.zjw.tradeplatformv1.pojo.VO.UserVO;
 import com.zjw.tradeplatformv1.pojo.entity.User;
 import com.zjw.tradeplatformv1.service.UserService;
 import org.omg.CORBA.OBJ_ADAPTER;
@@ -67,6 +68,11 @@ public class UserServiceiplm implements UserService {
             map.put("msg","登录失败");
         }
         return map;*/
+    }
+
+    @Override
+    public UserVO showOneUser(Integer userID) {
+        return userDao.selectByPrimaryKey(userID);
     }
 
     public class MyCallable implements Callable<Map<String,Object>>{

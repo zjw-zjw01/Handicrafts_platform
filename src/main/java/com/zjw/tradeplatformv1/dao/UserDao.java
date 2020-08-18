@@ -1,9 +1,8 @@
 package com.zjw.tradeplatformv1.dao;
 
+import com.zjw.tradeplatformv1.pojo.VO.UserVO;
 import com.zjw.tradeplatformv1.pojo.entity.User;
 import org.apache.ibatis.annotations.Mapper;
-
-import java.util.List;
 
 @Mapper
 public interface UserDao {
@@ -13,11 +12,9 @@ public interface UserDao {
 
     int insertSelective(User record);
 
-    User selectByPrimaryKey(Integer userId);
-
     User selecrByAccount(String account);
 
-    List<User> selectByPage(Integer pageIndex);
+    UserVO selectByPrimaryKey(Integer userId);
 
     int updateByPrimaryKeySelective(User record);
 

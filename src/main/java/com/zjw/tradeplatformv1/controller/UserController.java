@@ -1,6 +1,8 @@
 package com.zjw.tradeplatformv1.controller;
 
 import com.zjw.tradeplatformv1.pojo.VO.UserLoginVO;
+import com.zjw.tradeplatformv1.pojo.VO.UserVO;
+import com.zjw.tradeplatformv1.pojo.entity.User;
 import com.zjw.tradeplatformv1.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,5 +37,10 @@ public class UserController {
     }
 
 
+    @ResponseBody
+    @RequestMapping("/userDetail")
+    public UserVO showUserDetail(Integer userId){
+        return userService.showOneUser(userId);
+    }
 
 }

@@ -1525,9 +1525,9 @@
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="357" parent="286" name="user_age">
+    <column id="357" parent="286" name="user_image">
       <Position>6</Position>
-      <Comment>年龄</Comment>
+      <Comment>头像</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
