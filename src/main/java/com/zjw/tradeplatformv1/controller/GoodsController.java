@@ -1,6 +1,7 @@
 package com.zjw.tradeplatformv1.controller;
 
 import com.zjw.tradeplatformv1.pojo.VO.GoodsVO;
+import com.zjw.tradeplatformv1.pojo.VO.OneGoodsVO;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
 import com.zjw.tradeplatformv1.pojo.entity.Order;
 import com.zjw.tradeplatformv1.service.GoodsService;
@@ -40,7 +41,8 @@ public class GoodsController {
      */
     @RequestMapping("/showByOne")
     @ResponseBody
-    public Goods showByGoodsID(Integer goodsID){
+    public OneGoodsVO showByGoodsID(Integer goodsID){
+        System.out.println(goodsID);
         return goodsService.showByOne(goodsID);
     }
 

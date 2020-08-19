@@ -1,6 +1,7 @@
 package com.zjw.tradeplatformv1.dao;
 
 import com.zjw.tradeplatformv1.pojo.VO.GoodsVO;
+import com.zjw.tradeplatformv1.pojo.VO.OneGoodsVO;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -14,7 +15,7 @@ public interface GoodsDao {
 
     int insertSelective(Goods record);
 
-    Goods selectByPrimaryKey(Integer goodsId);
+    OneGoodsVO selectByPrimaryKey(Integer goodsId);
 
     List<GoodsVO> selectByPage(Integer page,Integer type);
 

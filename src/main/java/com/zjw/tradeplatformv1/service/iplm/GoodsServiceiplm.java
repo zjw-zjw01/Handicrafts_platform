@@ -3,6 +3,7 @@ package com.zjw.tradeplatformv1.service.iplm;
 import com.zjw.tradeplatformv1.dao.GoodsDao;
 import com.zjw.tradeplatformv1.dao.OrderDao;
 import com.zjw.tradeplatformv1.pojo.VO.GoodsVO;
+import com.zjw.tradeplatformv1.pojo.VO.OneGoodsVO;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
 import com.zjw.tradeplatformv1.pojo.entity.Order;
 import com.zjw.tradeplatformv1.service.GoodsService;
@@ -29,7 +30,7 @@ public class GoodsServiceiplm implements GoodsService {
     }
 
     @Override
-    public Goods showByOne(Integer goodsID) {
+    public OneGoodsVO showByOne(Integer goodsID) {
         return goodsDao.selectByPrimaryKey(goodsID);
     }
 

@@ -18,9 +18,9 @@
     goods_id, goods_name, goods_type, goods_price, goods_amount, goods_author_id, goods_image, 
     goods_content, goods_version, goods_create_time, goods_update_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.zjw.tradeplatformv1.pojo.VO.OneGoodsVO">
     select 
-    <include refid="Base_Column_List" />
+    goods_name,goods_price,goods_amount,goods_author_id,goods_image,goods_content
     from goods
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </select>
