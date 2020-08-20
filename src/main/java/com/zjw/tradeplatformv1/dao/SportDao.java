@@ -1,5 +1,6 @@
 package com.zjw.tradeplatformv1.dao;
 
+import com.zjw.tradeplatformv1.pojo.VO.SportArrVO;
 import com.zjw.tradeplatformv1.pojo.entity.Sport;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -15,7 +16,7 @@ public interface SportDao {
 
     Sport selectByPrimaryKey(Integer sportId);
 
-    List<Sport> selectByPage(Integer page);
+    List<SportArrVO> selectByPage(Integer page);
 
     int updateByPrimaryKeySelective(Sport record);
 

@@ -15,6 +15,6 @@ public interface GoodsService {
     Map<String ,Object> placeOrderCreate(Order order);
     Map<String,Object> orderSendSet(String state,Integer orderID);
 
-    List<Order> showInBuyer(Integer buyerID);
-    List<Order> showInSeller(Integer SellerID);
+    Map<String ,Object> showInBuyer(Integer buyerID);
+    Map<String ,Object> showInSeller(Integer SellerID);
 }

@@ -23,7 +23,12 @@
     from comment
     where comment_id = #{commentId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByPostId" resultType="com.zjw.tradeplatformv1.pojo.VO.CommentVO">
+      SELECT comment_userID,comment_context,comment_likes,comment_image,comment_userName
+      FROM comment
+      WHERE comment_postID = #{postId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from comment
     where comment_id = #{commentId,jdbcType=INTEGER}
   </delete>

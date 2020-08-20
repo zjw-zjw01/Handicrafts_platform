@@ -24,10 +24,11 @@
     from sport
     where sport_id = #{sportId,jdbcType=INTEGER}
   </select>
-    <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.entity.Sport">
-      SELECT <include refid="Base_Column_List"/>
+    <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.VO.SportArrVO">
+      SELECT
+      sport_id,sport_name,sport_other
       FROM sport
-      limit #{page},6
+      limit #{page},3
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from sport

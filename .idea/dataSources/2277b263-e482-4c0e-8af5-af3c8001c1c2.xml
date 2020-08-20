@@ -1270,7 +1270,7 @@
       <ColNames>goods_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="313" parent="283" name="order_number">
+    <column id="313" parent="283" name="order_id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
@@ -1306,7 +1306,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="283" name="order_home_type">
+    <column id="319" parent="283" name="order_o">
       <Position>7</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
@@ -1327,24 +1327,24 @@
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="323" parent="283" name="version">
+    <column id="323" parent="283" name="order_version">
       <Position>11</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="324" parent="283" name="create_time">
+    <column id="324" parent="283" name="order_create_time">
       <Position>12</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="325" parent="283" name="update_time">
+    <column id="325" parent="283" name="order_update_time">
       <Position>13</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="326" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>order_number</ColNames>
+      <ColNames>order_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="327" parent="284" name="postID">

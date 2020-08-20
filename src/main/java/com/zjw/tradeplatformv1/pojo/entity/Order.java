@@ -8,7 +8,7 @@ import java.util.Date;
  * @author 
  */
 public class Order implements Serializable {
-    private Integer orderNumber;
+    private Integer orderId;
 
     private String orderName;
 
@@ -20,7 +20,7 @@ public class Order implements Serializable {
 
     private Integer orderPriceSum;
 
-    private String orderHomeType;
+    private String orderO;
 
     private Integer orderBuyUserid;
 
@@ -28,20 +28,20 @@ public class Order implements Serializable {
 
     private String orderState;
 
-    private Integer version;
+    private Integer orderVersion;
 
-    private Date createTime;
+    private Date orderCreateTime;
 
-    private Date updateTime;
+    private Date orderUpdateTime;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getOrderNumber() {
-        return orderNumber;
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public void setOrderNumber(Integer orderNumber) {
-        this.orderNumber = orderNumber;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
     public String getOrderName() {
@@ -84,12 +84,12 @@ public class Order implements Serializable {
         this.orderPriceSum = orderPriceSum;
     }
 
-    public String getOrderHomeType() {
-        return orderHomeType;
+    public String getOrderO() {
+        return orderO;
     }
 
-    public void setOrderHomeType(String orderHomeType) {
-        this.orderHomeType = orderHomeType;
+    public void setOrderO(String orderO) {
+        this.orderO = orderO;
     }
 
     public Integer getOrderBuyUserid() {
@@ -116,28 +116,28 @@ public class Order implements Serializable {
         this.orderState = orderState;
     }
 
-    public Integer getVersion() {
-        return version;
+    public Integer getOrderVersion() {
+        return orderVersion;
     }
 
-    public void setVersion(Integer version) {
-        this.version = version;
+    public void setOrderVersion(Integer orderVersion) {
+        this.orderVersion = orderVersion;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getOrderCreateTime() {
+        return orderCreateTime;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setOrderCreateTime(Date orderCreateTime) {
+        this.orderCreateTime = orderCreateTime;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Date getOrderUpdateTime() {
+        return orderUpdateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setOrderUpdateTime(Date orderUpdateTime) {
+        this.orderUpdateTime = orderUpdateTime;
     }
 
     @Override
@@ -152,38 +152,38 @@ public class Order implements Serializable {
             return false;
         }
         Order other = (Order) that;
-        return (this.getOrderNumber() == null ? other.getOrderNumber() == null : this.getOrderNumber().equals(other.getOrderNumber()))
+        return (this.getOrderId() == null ? other.getOrderId() == null : this.getOrderId().equals(other.getOrderId()))
             && (this.getOrderName() == null ? other.getOrderName() == null : this.getOrderName().equals(other.getOrderName()))
             && (this.getOrderHomeUserid() == null ? other.getOrderHomeUserid() == null : this.getOrderHomeUserid().equals(other.getOrderHomeUserid()))
             && (this.getOrderHomeAmount() == null ? other.getOrderHomeAmount() == null : this.getOrderHomeAmount().equals(other.getOrderHomeAmount()))
             && (this.getOrderPriceOne() == null ? other.getOrderPriceOne() == null : this.getOrderPriceOne().equals(other.getOrderPriceOne()))
             && (this.getOrderPriceSum() == null ? other.getOrderPriceSum() == null : this.getOrderPriceSum().equals(other.getOrderPriceSum()))
-            && (this.getOrderHomeType() == null ? other.getOrderHomeType() == null : this.getOrderHomeType().equals(other.getOrderHomeType()))
+            && (this.getOrderO() == null ? other.getOrderO() == null : this.getOrderO().equals(other.getOrderO()))
             && (this.getOrderBuyUserid() == null ? other.getOrderBuyUserid() == null : this.getOrderBuyUserid().equals(other.getOrderBuyUserid()))
             && (this.getOrderGoodsId() == null ? other.getOrderGoodsId() == null : this.getOrderGoodsId().equals(other.getOrderGoodsId()))
             && (this.getOrderState() == null ? other.getOrderState() == null : this.getOrderState().equals(other.getOrderState()))
-            && (this.getVersion() == null ? other.getVersion() == null : this.getVersion().equals(other.getVersion()))
-            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
-            && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()));
+            && (this.getOrderVersion() == null ? other.getOrderVersion() == null : this.getOrderVersion().equals(other.getOrderVersion()))
+            && (this.getOrderCreateTime() == null ? other.getOrderCreateTime() == null : this.getOrderCreateTime().equals(other.getOrderCreateTime()))
+            && (this.getOrderUpdateTime() == null ? other.getOrderUpdateTime() == null : this.getOrderUpdateTime().equals(other.getOrderUpdateTime()));
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getOrderNumber() == null) ? 0 : getOrderNumber().hashCode());
+        result = prime * result + ((getOrderId() == null) ? 0 : getOrderId().hashCode());
         result = prime * result + ((getOrderName() == null) ? 0 : getOrderName().hashCode());
         result = prime * result + ((getOrderHomeUserid() == null) ? 0 : getOrderHomeUserid().hashCode());
         result = prime * result + ((getOrderHomeAmount() == null) ? 0 : getOrderHomeAmount().hashCode());
         result = prime * result + ((getOrderPriceOne() == null) ? 0 : getOrderPriceOne().hashCode());
         result = prime * result + ((getOrderPriceSum() == null) ? 0 : getOrderPriceSum().hashCode());
-        result = prime * result + ((getOrderHomeType() == null) ? 0 : getOrderHomeType().hashCode());
+        result = prime * result + ((getOrderO() == null) ? 0 : getOrderO().hashCode());
         result = prime * result + ((getOrderBuyUserid() == null) ? 0 : getOrderBuyUserid().hashCode());
         result = prime * result + ((getOrderGoodsId() == null) ? 0 : getOrderGoodsId().hashCode());
         result = prime * result + ((getOrderState() == null) ? 0 : getOrderState().hashCode());
-        result = prime * result + ((getVersion() == null) ? 0 : getVersion().hashCode());
-        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
-        result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
+        result = prime * result + ((getOrderVersion() == null) ? 0 : getOrderVersion().hashCode());
+        result = prime * result + ((getOrderCreateTime() == null) ? 0 : getOrderCreateTime().hashCode());
+        result = prime * result + ((getOrderUpdateTime() == null) ? 0 : getOrderUpdateTime().hashCode());
         return result;
     }
 
@@ -193,19 +193,19 @@ public class Order implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", orderNumber=").append(orderNumber);
+        sb.append(", orderId=").append(orderId);
         sb.append(", orderName=").append(orderName);
         sb.append(", orderHomeUserid=").append(orderHomeUserid);
         sb.append(", orderHomeAmount=").append(orderHomeAmount);
         sb.append(", orderPriceOne=").append(orderPriceOne);
         sb.append(", orderPriceSum=").append(orderPriceSum);
-        sb.append(", orderHomeType=").append(orderHomeType);
+        sb.append(", orderO=").append(orderO);
         sb.append(", orderBuyUserid=").append(orderBuyUserid);
         sb.append(", orderGoodsId=").append(orderGoodsId);
         sb.append(", orderState=").append(orderState);
-        sb.append(", version=").append(version);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", updateTime=").append(updateTime);
+        sb.append(", orderVersion=").append(orderVersion);
+        sb.append(", orderCreateTime=").append(orderCreateTime);
+        sb.append(", orderUpdateTime=").append(orderUpdateTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

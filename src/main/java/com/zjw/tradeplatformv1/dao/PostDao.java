@@ -1,5 +1,7 @@
 package com.zjw.tradeplatformv1.dao;
 
+import com.zjw.tradeplatformv1.pojo.VO.PostArrVO;
+import com.zjw.tradeplatformv1.pojo.VO.PostVO;
 import com.zjw.tradeplatformv1.pojo.entity.Post;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -13,9 +15,9 @@ public interface PostDao {
 
     int insertSelective(Post record);
 
-    Post selectByPrimaryKey(Integer postid);
+    PostVO selectByPrimaryKey(Integer postid);
 
-    List<Post> selectByPost(Integer number);
+    List<PostArrVO> selectByPost(Integer number);
 
     int updateByPrimaryKeySelective(Post record);
 

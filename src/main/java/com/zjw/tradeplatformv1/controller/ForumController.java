@@ -1,9 +1,11 @@
 package com.zjw.tradeplatformv1.controller;
 
+import com.zjw.tradeplatformv1.pojo.VO.PostArrVO;
 import com.zjw.tradeplatformv1.pojo.entity.Comment;
 import com.zjw.tradeplatformv1.pojo.entity.Post;
 import com.zjw.tradeplatformv1.service.ForumService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,6 +15,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/forum")
+@CrossOrigin
 public class ForumController {
 
     @Resource
@@ -20,7 +23,7 @@ public class ForumController {
 
     @RequestMapping("/showPosts")
     @ResponseBody
-    public List<Post> showPosts(Integer number){
+    public List<PostArrVO> showPosts(Integer number){
         return forumService.showPosts(number);
     }
 

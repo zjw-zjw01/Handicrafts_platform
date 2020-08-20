@@ -2,60 +2,48 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zjw.tradeplatformv1.dao.OrderDao">
   <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.Order">
-    <id column="order_number" jdbcType="INTEGER" property="orderNumber" />
+    <id column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="order_name" jdbcType="VARCHAR" property="orderName" />
     <result column="order_home_userid" jdbcType="INTEGER" property="orderHomeUserid" />
     <result column="order_home_amount" jdbcType="VARCHAR" property="orderHomeAmount" />
     <result column="order_price_one" jdbcType="INTEGER" property="orderPriceOne" />
     <result column="order_price_sum" jdbcType="INTEGER" property="orderPriceSum" />
-    <result column="order_home_type" jdbcType="VARCHAR" property="orderHomeType" />
+    <result column="order_o" jdbcType="VARCHAR" property="orderO" />
     <result column="order_buy_userid" jdbcType="INTEGER" property="orderBuyUserid" />
     <result column="order_goods_id" jdbcType="INTEGER" property="orderGoodsId" />
     <result column="order_state" jdbcType="VARCHAR" property="orderState" />
-    <result column="version" jdbcType="INTEGER" property="version" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="order_version" jdbcType="INTEGER" property="orderVersion" />
+    <result column="order_create_time" jdbcType="TIMESTAMP" property="orderCreateTime" />
+    <result column="order_update_time" jdbcType="TIMESTAMP" property="orderUpdateTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    order_number, order_name, order_home_userid, order_home_amount, order_price_one, 
-    order_price_sum, order_home_type, order_buy_userid, order_goods_id, order_state, 
-    version, create_time, update_time
+    order_id, order_name, order_home_userid, order_home_amount, order_price_one, order_price_sum, 
+    order_o, order_buy_userid, order_goods_id, order_state, order_version, order_create_time, 
+    order_update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from order
-    where order_number = #{orderNumber,jdbcType=INTEGER}
-  </select>
-  <select id="selectByBuyerID" resultType="com.zjw.tradeplatformv1.pojo.entity.Order">
-    SELECT
-    <include refid="Base_Column_List"/>
-    FROM "order"
-    WHERE order_buy_userid = #{buyID,jdbcType=INTEGER}
-  </select>
-  <select id="selectBySellerID" resultType="com.zjw.tradeplatformv1.pojo.entity.Order">
-    SELECT
-    <include refid="Base_Column_List"/>
-    FROM "order"
-    WHERE order_userid = #{sellerID,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from order
-    where order_number = #{orderNumber,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="order_number" keyProperty="orderNumber" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="order_id" keyProperty="orderId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order" useGeneratedKeys="true">
     insert into order (order_name, order_home_userid, order_home_amount, 
-      order_price_one, order_price_sum, order_home_type, 
+      order_price_one, order_price_sum, order_o, 
       order_buy_userid, order_goods_id, order_state, 
-      version, create_time, update_time
+      order_version, order_create_time, order_update_time
       )
     values (#{orderName,jdbcType=VARCHAR}, #{orderHomeUserid,jdbcType=INTEGER}, #{orderHomeAmount,jdbcType=VARCHAR}, 
-      #{orderPriceOne,jdbcType=INTEGER}, #{orderPriceSum,jdbcType=INTEGER}, #{orderHomeType,jdbcType=VARCHAR}, 
+      #{orderPriceOne,jdbcType=INTEGER}, #{orderPriceSum,jdbcType=INTEGER}, #{orderO,jdbcType=VARCHAR}, 
       #{orderBuyUserid,jdbcType=INTEGER}, #{orderGoodsId,jdbcType=INTEGER}, #{orderState,jdbcType=VARCHAR}, 
-      #{version,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{orderVersion,jdbcType=INTEGER}, #{orderCreateTime,jdbcType=TIMESTAMP}, #{orderUpdateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" keyColumn="order_number" keyProperty="orderNumber" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="order_id" keyProperty="orderId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order" useGeneratedKeys="true">
     insert into order
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="orderName != null">
@@ -73,8 +61,8 @@
       <if test="orderPriceSum != null">
         order_price_sum,
       </if>
-      <if test="orderHomeType != null">
-        order_home_type,
+      <if test="orderO != null">
+        order_o,
       </if>
       <if test="orderBuyUserid != null">
         order_buy_userid,
@@ -85,14 +73,14 @@
       <if test="orderState != null">
         order_state,
       </if>
-      <if test="version != null">
-        version,
+      <if test="orderVersion != null">
+        order_version,
       </if>
-      <if test="createTime != null">
-        create_time,
+      <if test="orderCreateTime != null">
+        order_create_time,
       </if>
-      <if test="updateTime != null">
-        update_time,
+      <if test="orderUpdateTime != null">
+        order_update_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -111,8 +99,8 @@
       <if test="orderPriceSum != null">
         #{orderPriceSum,jdbcType=INTEGER},
       </if>
-      <if test="orderHomeType != null">
-        #{orderHomeType,jdbcType=VARCHAR},
+      <if test="orderO != null">
+        #{orderO,jdbcType=VARCHAR},
       </if>
       <if test="orderBuyUserid != null">
         #{orderBuyUserid,jdbcType=INTEGER},
@@ -123,14 +111,14 @@
       <if test="orderState != null">
         #{orderState,jdbcType=VARCHAR},
       </if>
-      <if test="version != null">
-        #{version,jdbcType=INTEGER},
+      <if test="orderVersion != null">
+        #{orderVersion,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+      <if test="orderCreateTime != null">
+        #{orderCreateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
+      <if test="orderUpdateTime != null">
+        #{orderUpdateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -152,8 +140,8 @@
       <if test="orderPriceSum != null">
         order_price_sum = #{orderPriceSum,jdbcType=INTEGER},
       </if>
-      <if test="orderHomeType != null">
-        order_home_type = #{orderHomeType,jdbcType=VARCHAR},
+      <if test="orderO != null">
+        order_o = #{orderO,jdbcType=VARCHAR},
       </if>
       <if test="orderBuyUserid != null">
         order_buy_userid = #{orderBuyUserid,jdbcType=INTEGER},
@@ -164,17 +152,17 @@
       <if test="orderState != null">
         order_state = #{orderState,jdbcType=VARCHAR},
       </if>
-      <if test="version != null">
-        version = #{version,jdbcType=INTEGER},
+      <if test="orderVersion != null">
+        order_version = #{orderVersion,jdbcType=INTEGER},
       </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
+      <if test="orderCreateTime != null">
+        order_create_time = #{orderCreateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      <if test="orderUpdateTime != null">
+        order_update_time = #{orderUpdateTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where order_number = #{orderNumber,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order">
     update order
@@ -183,13 +171,13 @@
       order_home_amount = #{orderHomeAmount,jdbcType=VARCHAR},
       order_price_one = #{orderPriceOne,jdbcType=INTEGER},
       order_price_sum = #{orderPriceSum,jdbcType=INTEGER},
-      order_home_type = #{orderHomeType,jdbcType=VARCHAR},
+      order_o = #{orderO,jdbcType=VARCHAR},
       order_buy_userid = #{orderBuyUserid,jdbcType=INTEGER},
       order_goods_id = #{orderGoodsId,jdbcType=INTEGER},
       order_state = #{orderState,jdbcType=VARCHAR},
-      version = #{version,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
-    where order_number = #{orderNumber,jdbcType=INTEGER}
+      order_version = #{orderVersion,jdbcType=INTEGER},
+      order_create_time = #{orderCreateTime,jdbcType=TIMESTAMP},
+      order_update_time = #{orderUpdateTime,jdbcType=TIMESTAMP}
+    where order_id = #{orderId,jdbcType=INTEGER}
   </update>
 </mapper>

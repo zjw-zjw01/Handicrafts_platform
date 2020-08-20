@@ -1,9 +1,11 @@
 package com.zjw.tradeplatformv1.controller;
 
+import com.zjw.tradeplatformv1.pojo.VO.SportArrVO;
 import com.zjw.tradeplatformv1.pojo.entity.Sport;
 import com.zjw.tradeplatformv1.service.SportService;
 import org.omg.CORBA.OBJ_ADAPTER;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -13,6 +15,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/sport")
+@CrossOrigin
 public class SportController {
 
     @Resource
@@ -20,7 +23,7 @@ public class SportController {
 
     @ResponseBody
     @RequestMapping("/showAll")
-    public List<Sport> showByPage(Integer page){
+    public List<SportArrVO> showByPage(Integer page){
         return sportService.showSports(page);
     }
 

@@ -40,10 +40,10 @@ public class GoodsServiceiplm implements GoodsService {
 
         //处理数据
         Date date = new Date();
-        order.setCreateTime(date);
-        order.setUpdateTime(date);
+        order.setOrderCreateTime(date);
+        order.setOrderUpdateTime(date);
         order.setOrderState("待发货");
-        order.setVersion(1);
+        order.setOrderVersion(1);
 
         //插入数据库
         if ( orderDao.insertSelective(order) == 1 ){
@@ -63,7 +63,7 @@ public class GoodsServiceiplm implements GoodsService {
 
         Order order = new Order();
         order.setOrderState(state);
-        order.setOrderNumber(orderID);
+        order.setOrderId(orderID);
 
         if(orderDao.updateByPrimaryKeySelective(order) == 1){
             map.put("msg","设置成功");
@@ -74,12 +74,12 @@ public class GoodsServiceiplm implements GoodsService {
     }
 
     @Override
-    public List<Order> showInBuyer(Integer buyerID) {
-        return orderDao.selectByBuyerID(buyerID);
+    public Map<String ,Object> showInBuyer(Integer buyerID) {
+        return null;
     }
 
     @Override
-    public List<Order> showInSeller(Integer sellerID) {
-        return orderDao.selectBySellerID(sellerID);
+    public Map<String ,Object> showInSeller(Integer sellerID) {
+        return null;
     }
 }

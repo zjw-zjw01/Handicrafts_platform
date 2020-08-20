@@ -19,17 +19,17 @@
     postID, post_head, post_context, post_class, post_image, post_video, post_verify, 
     post_likes, post_authorID, post_version, post_createTime, post_updateTime
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.zjw.tradeplatformv1.pojo.VO.PostVO">
     select 
-    <include refid="Base_Column_List" />
+    postID,post_head,post_context,post_class,post_image,post_verify,post_likes,post_authorID
     from post
     where postID = #{postid,jdbcType=INTEGER}
   </select>
-    <select id="selectByPost" resultType="com.zjw.tradeplatformv1.pojo.entity.Post">
+    <select id="selectByPost" resultType="com.zjw.tradeplatformv1.pojo.VO.PostArrVO">
       SELECT
-      <include refid="Base_Column_List"/>
+      postID,post_head,post_class,post_image,post_likes
       FROM post
-      limit #{number},2
+      limit #{number},6
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from post

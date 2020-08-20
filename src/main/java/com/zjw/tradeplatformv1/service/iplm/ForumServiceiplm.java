@@ -2,6 +2,7 @@ package com.zjw.tradeplatformv1.service.iplm;
 
 import com.zjw.tradeplatformv1.dao.CommentDao;
 import com.zjw.tradeplatformv1.dao.PostDao;
+import com.zjw.tradeplatformv1.pojo.VO.PostArrVO;
 import com.zjw.tradeplatformv1.pojo.entity.Comment;
 import com.zjw.tradeplatformv1.pojo.entity.Post;
 import com.zjw.tradeplatformv1.service.ForumService;
@@ -22,8 +23,8 @@ public class ForumServiceiplm implements ForumService {
     CommentDao commentDao;
 
     @Override
-    public List<Post> showPosts(Integer number) {
-        return postDao.selectByPost(number);
+    public List<PostArrVO> showPosts(Integer number) {
+        return postDao.selectByPost((number-1)*6);
     }
 
     @Override
@@ -31,7 +32,7 @@ public class ForumServiceiplm implements ForumService {
         Map<String ,Object> map = new HashMap<>();
 
         map.put("post",postDao.selectByPrimaryKey(postID));
-        map.put("comment",commentDao.selectByPrimaryKey(postID));
+        map.put("comment",commentDao.selectByPostId(postID));
         return map;
     }
 

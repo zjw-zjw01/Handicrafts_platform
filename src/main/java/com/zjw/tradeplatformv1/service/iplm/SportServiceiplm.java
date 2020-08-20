@@ -1,6 +1,7 @@
 package com.zjw.tradeplatformv1.service.iplm;
 
 import com.zjw.tradeplatformv1.dao.SportDao;
+import com.zjw.tradeplatformv1.pojo.VO.SportArrVO;
 import com.zjw.tradeplatformv1.pojo.entity.Sport;
 import com.zjw.tradeplatformv1.service.SportService;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,8 @@ public class SportServiceiplm implements SportService {
     SportDao sportDao;
 
     @Override
-    public List<Sport> showSports(Integer page) {
-        return sportDao.selectByPage(page);
+    public List<SportArrVO> showSports(Integer page) {
+        return sportDao.selectByPage( (page-1)*3 );
     }
 
     @Override

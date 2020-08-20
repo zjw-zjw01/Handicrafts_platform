@@ -75,7 +75,7 @@
               <option name="needToStringHashcodeEquals" value="true" />
               <option name="offsetLimit" value="true" />
               <option name="overrideXML" value="true" />
-              <option name="primaryKey" value="order_number" />
+              <option name="primaryKey" value="order_id" />
               <option name="projectFolder" value="$PROJECT_DIR$" />
               <option name="tableName" value="order" />
               <option name="xmlMvnPath" value="src/main/resources" />

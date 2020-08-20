@@ -55,6 +55,7 @@ public class GoodsController {
     @RequestMapping("/placeOrder")
     @ResponseBody
     public Map<String,Object> placeOrder(Order order){
+        System.out.println(order);
         return goodsService.placeOrderCreate(order);
     }
 
@@ -77,7 +78,7 @@ public class GoodsController {
      */
     @ResponseBody
     @RequestMapping("/showInBuyer")
-    public List<Order> orderShowInBuyer(Integer buyerID){
+    public Map<String ,Object> orderShowInBuyer(Integer buyerID){
         return goodsService.showInBuyer(buyerID);
     }
 
@@ -88,7 +89,7 @@ public class GoodsController {
      */
     @RequestMapping("/showInSeller")
     @ResponseBody
-    public List<Order> orderShowInSeller(Integer sellerID){
+    public Map<String ,Object> orderShowInSeller(Integer sellerID){
         return goodsService.showInSeller(sellerID);
     }
 
