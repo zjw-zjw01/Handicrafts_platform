@@ -46,4 +46,28 @@ public class ForumServiceiplm implements ForumService {
         }
         return map;
     }
+
+    @Override
+    public Map<String, Object> addPost(Post post) {
+        Map<String ,Object> map = new HashMap<>();
+        if (postDao.insertSelective(post) == 1){
+            map.put("res",true);
+        }else {
+            map.put("res",false);
+        }
+        return map;
+    }
+
+    @Override
+    public Map<String, Object> deletePost(Integer postId) {
+        Map<String ,Object> map = new HashMap<>();
+        if(postDao.deleteByPrimaryKey(postId) == 1){
+            map.put("res",true);
+            map.put("msg","成功删除");
+        }else {
+            map.put("res",false);
+            map.put("msg","删除失败");
+        }
+        return map;
+    }
 }

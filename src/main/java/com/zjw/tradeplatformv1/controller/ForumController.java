@@ -33,12 +33,22 @@ public class ForumController {
         return forumService.showOnePost(postID);
     }
 
+    @RequestMapping("/addPost")
+    @ResponseBody
+    public Map<String ,Object> addPost(Post post){
+        return forumService.addPost(post);
+    }
+
     @RequestMapping("/addComment")
     @ResponseBody
     public Map<String,Object> commentAdd(Comment comment){
         return forumService.commentAdd(comment);
     }
 
-
+    @RequestMapping("/deletePost")
+    @ResponseBody
+    public Map<String ,Object> deletePost(Integer postId){
+        return forumService.deletePost(postId);
+    }
 
 }

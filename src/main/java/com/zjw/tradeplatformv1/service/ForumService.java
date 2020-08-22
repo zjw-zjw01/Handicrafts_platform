@@ -11,4 +11,6 @@ public interface ForumService {
     List<PostArrVO> showPosts(Integer number);
     Map<String ,Object> showOnePost(Integer postID);
     Map<String,Object> commentAdd(Comment comment);
+    Map<String ,Object> addPost(Post post);
+    Map<String ,Object> deletePost(Integer postId);
 }

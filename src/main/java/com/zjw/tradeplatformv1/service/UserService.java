@@ -8,5 +8,5 @@ import java.util.Map;
 
 public interface UserService {
     Map<String,Object> loginVerify(UserLoginVO userLoginVO);
-    UserVO showOneUser(Integer userID);
+    Map<String ,Object> showOneUser(Integer userID);
 }

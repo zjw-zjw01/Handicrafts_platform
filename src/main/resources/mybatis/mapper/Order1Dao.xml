@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.tradeplatformv1.dao.Order1Dao">
+  <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.Order1">
+    <id column="order1_id" jdbcType="INTEGER" property="order1Id" />
+    <result column="order1_home_user_id" jdbcType="INTEGER" property="order1HomeUserId" />
+    <result column="order1_home_amount" jdbcType="INTEGER" property="order1HomeAmount" />
+    <result column="order1_price_one" jdbcType="INTEGER" property="order1PriceOne" />
+    <result column="order1_price_sum" jdbcType="INTEGER" property="order1PriceSum" />
+    <result column="order1_buy_user_id" jdbcType="INTEGER" property="order1BuyUserId" />
+    <result column="order1_goods_id" jdbcType="INTEGER" property="order1GoodsId" />
+    <result column="order1_state" jdbcType="INTEGER" property="order1State" />
+    <result column="order1_version" jdbcType="INTEGER" property="order1Version" />
+    <result column="order1_create_time" jdbcType="TIMESTAMP" property="order1CreateTime" />
+    <result column="order1_update_time" jdbcType="TIMESTAMP" property="order1UpdateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    order1_id, order1_home_user_id, order1_home_amount, order1_price_one, order1_price_sum, 
+    order1_buy_user_id, order1_goods_id, order1_state, order1_version, order1_create_time, 
+    order1_update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order1
+    where order1_id = #{order1Id,jdbcType=INTEGER}
+  </select>
+    <select id="selectByUserBuyID" resultType="com.zjw.tradeplatformv1.pojo.VO.Order1VO">
+      SELECT
+      order1_id,order1_home_user_id, order1_home_amount,
+      order1_price_one, order1_price_sum, order1_buy_user_id,
+      order1_goods_id, order1_state
+      FROM order1
+      WHERE order1_buy_user_id = #{buyerID}
+    </select>
+  <select id="selectByUserSellerID" resultType="com.zjw.tradeplatformv1.pojo.VO.Order1VO">
+     SELECT
+      order1_id,order1_home_user_id, order1_home_amount,
+      order1_price_one, order1_price_sum, order1_buy_user_id,
+      order1_goods_id, order1_state
+      FROM order1
+      WHERE order1_home_user_id = #{sellerID}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from order1
+    where order1_id = #{order1Id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="order1_id" keyProperty="order1Id" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order1" useGeneratedKeys="true">
+    insert into order1 (order1_home_user_id, order1_home_amount, 
+      order1_price_one, order1_price_sum, order1_buy_user_id, 
+      order1_goods_id, order1_state, order1_version, 
+      order1_create_time, order1_update_time)
+    values (#{order1HomeUserId,jdbcType=INTEGER}, #{order1HomeAmount,jdbcType=INTEGER}, 
+      #{order1PriceOne,jdbcType=INTEGER}, #{order1PriceSum,jdbcType=INTEGER}, #{order1BuyUserId,jdbcType=INTEGER}, 
+      #{order1GoodsId,jdbcType=INTEGER}, #{order1State,jdbcType=INTEGER}, #{order1Version,jdbcType=INTEGER}, 
+      #{order1CreateTime,jdbcType=TIMESTAMP}, #{order1UpdateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="order1_id" keyProperty="order1Id" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order1" useGeneratedKeys="true">
+    insert into order1
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="order1HomeUserId != null">
+        order1_home_user_id,
+      </if>
+      <if test="order1HomeAmount != null">
+        order1_home_amount,
+      </if>
+      <if test="order1PriceOne != null">
+        order1_price_one,
+      </if>
+      <if test="order1PriceSum != null">
+        order1_price_sum,
+      </if>
+      <if test="order1BuyUserId != null">
+        order1_buy_user_id,
+      </if>
+      <if test="order1GoodsId != null">
+        order1_goods_id,
+      </if>
+      <if test="order1State != null">
+        order1_state,
+      </if>
+      <if test="order1Version != null">
+        order1_version,
+      </if>
+      <if test="order1CreateTime != null">
+        order1_create_time,
+      </if>
+      <if test="order1UpdateTime != null">
+        order1_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="order1HomeUserId != null">
+        #{order1HomeUserId,jdbcType=INTEGER},
+      </if>
+      <if test="order1HomeAmount != null">
+        #{order1HomeAmount,jdbcType=INTEGER},
+      </if>
+      <if test="order1PriceOne != null">
+        #{order1PriceOne,jdbcType=INTEGER},
+      </if>
+      <if test="order1PriceSum != null">
+        #{order1PriceSum,jdbcType=INTEGER},
+      </if>
+      <if test="order1BuyUserId != null">
+        #{order1BuyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="order1GoodsId != null">
+        #{order1GoodsId,jdbcType=INTEGER},
+      </if>
+      <if test="order1State != null">
+        #{order1State,jdbcType=INTEGER},
+      </if>
+      <if test="order1Version != null">
+        #{order1Version,jdbcType=INTEGER},
+      </if>
+      <if test="order1CreateTime != null">
+        #{order1CreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="order1UpdateTime != null">
+        #{order1UpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order1">
+    update order1
+    <set>
+      <if test="order1HomeUserId != null">
+        order1_home_user_id = #{order1HomeUserId,jdbcType=INTEGER},
+      </if>
+      <if test="order1HomeAmount != null">
+        order1_home_amount = #{order1HomeAmount,jdbcType=INTEGER},
+      </if>
+      <if test="order1PriceOne != null">
+        order1_price_one = #{order1PriceOne,jdbcType=INTEGER},
+      </if>
+      <if test="order1PriceSum != null">
+        order1_price_sum = #{order1PriceSum,jdbcType=INTEGER},
+      </if>
+      <if test="order1BuyUserId != null">
+        order1_buy_user_id = #{order1BuyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="order1GoodsId != null">
+        order1_goods_id = #{order1GoodsId,jdbcType=INTEGER},
+      </if>
+      <if test="order1State != null">
+        order1_state = #{order1State,jdbcType=INTEGER},
+      </if>
+      <if test="order1Version != null">
+        order1_version = #{order1Version,jdbcType=INTEGER},
+      </if>
+      <if test="order1CreateTime != null">
+        order1_create_time = #{order1CreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="order1UpdateTime != null">
+        order1_update_time = #{order1UpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where order1_id = #{order1Id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.Order1">
+    update order1
+    set order1_home_user_id = #{order1HomeUserId,jdbcType=INTEGER},
+      order1_home_amount = #{order1HomeAmount,jdbcType=INTEGER},
+      order1_price_one = #{order1PriceOne,jdbcType=INTEGER},
+      order1_price_sum = #{order1PriceSum,jdbcType=INTEGER},
+      order1_buy_user_id = #{order1BuyUserId,jdbcType=INTEGER},
+      order1_goods_id = #{order1GoodsId,jdbcType=INTEGER},
+      order1_state = #{order1State,jdbcType=INTEGER},
+      order1_version = #{order1Version,jdbcType=INTEGER},
+      order1_create_time = #{order1CreateTime,jdbcType=TIMESTAMP},
+      order1_update_time = #{order1UpdateTime,jdbcType=TIMESTAMP}
+    where order1_id = #{order1Id,jdbcType=INTEGER}
+  </update>
+</mapper>

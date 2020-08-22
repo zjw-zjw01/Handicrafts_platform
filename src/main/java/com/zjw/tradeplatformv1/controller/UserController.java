@@ -39,7 +39,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping("/userDetail")
-    public UserVO showUserDetail(Integer userId){
+    public Map<String ,Object> showUserDetail(Integer userId){
         return userService.showOneUser(userId);
     }
 

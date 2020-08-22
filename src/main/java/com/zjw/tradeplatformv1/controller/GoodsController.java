@@ -3,7 +3,7 @@ package com.zjw.tradeplatformv1.controller;
 import com.zjw.tradeplatformv1.pojo.VO.GoodsVO;
 import com.zjw.tradeplatformv1.pojo.VO.OneGoodsVO;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
-import com.zjw.tradeplatformv1.pojo.entity.Order;
+import com.zjw.tradeplatformv1.pojo.entity.Order1;
 import com.zjw.tradeplatformv1.service.GoodsService;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Controller;
@@ -54,8 +54,7 @@ public class GoodsController {
      */
     @RequestMapping("/placeOrder")
     @ResponseBody
-    public Map<String,Object> placeOrder(Order order){
-        System.out.println(order);
+    public Map<String,Object> placeOrder(Order1 order){
         return goodsService.placeOrderCreate(order);
     }
 
@@ -67,7 +66,7 @@ public class GoodsController {
      */
     @RequestMapping("/stateChange")
     @ResponseBody
-    public Map<String,Object> orderSend(String state ,Integer orderID){
+    public Map<String,Object> orderSend(Integer state ,Integer orderID){
         return goodsService.orderSendSet(state,orderID);
     }
 
@@ -93,5 +92,16 @@ public class GoodsController {
         return goodsService.showInSeller(sellerID);
     }
 
+    @ResponseBody
+    @RequestMapping("/orderDelete")
+    public Map<String ,Object> orderSellerDelete(Integer orderID){
+        return goodsService.deleteInSeller(orderID);
+    }
+
+    @ResponseBody
+    @RequestMapping("/goodsDelete")
+    public Map<String ,Object> orderHomeDelete(Integer goodsId){
+        return goodsService.deleteGoods(goodsId);
+    }
 
 }

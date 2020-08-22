@@ -1,6 +1,10 @@
 package com.zjw.tradeplatformv1.service.iplm;
 
+import com.zjw.tradeplatformv1.dao.GoodsDao;
+import com.zjw.tradeplatformv1.dao.Order1Dao;
+import com.zjw.tradeplatformv1.dao.PostDao;
 import com.zjw.tradeplatformv1.dao.UserDao;
+import com.zjw.tradeplatformv1.pojo.VO.Order1VO;
 import com.zjw.tradeplatformv1.pojo.VO.UserLoginVO;
 import com.zjw.tradeplatformv1.pojo.VO.UserVO;
 import com.zjw.tradeplatformv1.pojo.entity.User;
@@ -10,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -70,9 +75,34 @@ public class UserServiceiplm implements UserService {
         return map;*/
     }
 
+    @Resource
+    GoodsDao goodsDao;
+    @Resource
+    Order1Dao order1Dao;
+    @Resource
+    PostDao postDao;
+
     @Override
-    public UserVO showOneUser(Integer userID) {
-        return userDao.selectByPrimaryKey(userID);
+    public Map<String,Object> showOneUser(Integer userID) {
+        Map<String ,Object> map = new HashMap<>();
+        List<Order1VO> list1 = order1Dao.selectByUserBuyID(userID);
+        List<Order1VO> list2 = order1Dao.selectByUserSellerID(userID);
+
+        for (Order1VO item :list1){
+            item.setGoodsName(goodsDao.selectGoodsNameByGoodsId(item.getOrder1GoodsId()));
+        }
+
+        for (Order1VO item :list2){
+            item.setGoodsName(goodsDao.selectGoodsNameByGoodsId(item.getOrder1GoodsId()));
+        }
+
+        map.put("user",userDao.selectByPrimaryKey(userID));
+        map.put("myGoods",goodsDao.selectByAuthorID(userID));
+        map.put("orderBuyer",list1);
+        map.put("orderSeller",list2);
+        map.put("post",postDao.selectByAuthorID(userID));
+
+        return map;
     }
 
     public class MyCallable implements Callable<Map<String,Object>>{

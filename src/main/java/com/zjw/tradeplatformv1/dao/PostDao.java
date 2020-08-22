@@ -17,6 +17,8 @@ public interface PostDao {
 
     PostVO selectByPrimaryKey(Integer postid);
 
+    List<PostVO> selectByAuthorID(Integer userId);
+
     List<PostArrVO> selectByPost(Integer number);
 
     int updateByPrimaryKeySelective(Post record);
