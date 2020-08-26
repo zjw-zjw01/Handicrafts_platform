@@ -37,9 +37,9 @@
     from goods
     WHERE goods_author_id = #{userId}
     </select>
-  <select id="selectGoodsNameByGoodsId" resultType="java.lang.String">
+  <select id="selectGoodsNameByGoodsId" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsSecondVO">
     SELECT
-    goods_name
+    goods_name,goods_image
     FROM goods
     WHERE goods_id = #{goodsId}
   </select>

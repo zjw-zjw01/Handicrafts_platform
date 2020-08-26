@@ -89,10 +89,23 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.6.1</version>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.test</groupId>
+			<artifactId>test</artifactId>
+			<scope>system</scope>
+			<version>1.0</version>
+			<systemPath>${project.basedir}/src/main/resources/lib/YBOpenApi.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -113,6 +126,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<!--值为true是指打包时包含scope为system的第三方Jar包-->
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

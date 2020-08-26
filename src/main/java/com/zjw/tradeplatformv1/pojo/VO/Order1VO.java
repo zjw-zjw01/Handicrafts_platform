@@ -23,10 +23,12 @@ public class Order1VO {
 
     private String goodsName;
 
+    private String goodsImage;
+
     public Order1VO() {
     }
 
-    public Order1VO(Integer order1Id, Integer order1HomeUserId, Integer order1HomeAmount, Integer order1PriceOne, Integer order1PriceSum, Integer order1BuyUserId, Integer order1GoodsId, Integer order1State, String goodsName) {
+    public Order1VO(Integer order1Id, Integer order1HomeUserId, Integer order1HomeAmount, Integer order1PriceOne, Integer order1PriceSum, Integer order1BuyUserId, Integer order1GoodsId, Integer order1State, String goodsName, String goodsImage) {
         this.order1Id = order1Id;
         this.order1HomeUserId = order1HomeUserId;
         this.order1HomeAmount = order1HomeAmount;
@@ -36,6 +38,15 @@ public class Order1VO {
         this.order1GoodsId = order1GoodsId;
         this.order1State = order1State;
         this.goodsName = goodsName;
+        this.goodsImage = goodsImage;
+    }
+
+    public String getGoodsImage() {
+        return goodsImage;
+    }
+
+    public void setGoodsImage(String goodsImage) {
+        this.goodsImage = goodsImage;
     }
 
     public Integer getOrder1Id() {

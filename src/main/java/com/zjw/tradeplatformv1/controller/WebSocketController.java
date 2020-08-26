@@ -23,6 +23,12 @@ import java.util.Date;
 @CrossOrigin
 public class WebSocketController {
 
+    @RequestMapping("/")
+    public String index(){
+        return "index";
+    }
+
+
     @Autowired
     SimpMessagingTemplate template;
     /**

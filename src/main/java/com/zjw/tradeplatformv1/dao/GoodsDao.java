@@ -1,6 +1,7 @@
 package com.zjw.tradeplatformv1.dao;
 
 import com.zjw.tradeplatformv1.pojo.VO.GoodsItemVO;
+import com.zjw.tradeplatformv1.pojo.VO.GoodsSecondVO;
 import com.zjw.tradeplatformv1.pojo.VO.GoodsVO;
 import com.zjw.tradeplatformv1.pojo.VO.OneGoodsVO;
 import com.zjw.tradeplatformv1.pojo.entity.Goods;
@@ -22,7 +23,7 @@ public interface GoodsDao {
 
     List<GoodsVO> selectByPage(Integer page,Integer type);
 
-    String selectGoodsNameByGoodsId(Integer goodsId);
+    GoodsSecondVO selectGoodsNameByGoodsId(Integer goodsId);
 
     int updateByPrimaryKeySelective(Goods record);
 
