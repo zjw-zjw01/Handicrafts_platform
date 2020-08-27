@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="tradeplatformv1:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d6596eb0-7e87-45c4-bc61-6d6f51b049b2" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alipay_sdk_alipay_sdk_java_3_7_110_ALL.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_2_2_6_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_1_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_1_8_RELEASE.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Tradeplatformv1Application.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Tradeplatformv1Application.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/AliPayConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/AliPayConfig.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/WebSocketConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/PayController.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/PayController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/WebSocketController.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/WebSocketController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/dao/GoodsDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/dao/GoodsDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/Order1VO.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/Order1VO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/service/iplm/UserServiceiplm.java" afterPath="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/service/iplm/UserServiceiplm.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/GoodsDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/GoodsDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" afterPath="$PROJECT_DIR$/target/classes/application.yml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/mapper/GoodsDao.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/mapper/GoodsDao.xml" />
       <change beforePath="$PROJECT_DIR$/tradeplatformv1.iml" afterPath="$PROJECT_DIR$/tradeplatformv1.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,34 +49,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Tradeplatformv1Application.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tradeplatformv1Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Tradeplatformv1Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebSocketController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/WebSocketController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+            <state relative-caret-position="161">
+              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding>
-                <element signature="e#1078#1079#0" expanded="true" />
-                <element signature="e#1108#1109#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/UserController.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="85" column="48" lean-forward="false" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
+            <state relative-caret-position="217">
+              <caret line="149" column="24" lean-forward="false" selection-start-line="141" selection-start-column="12" selection-end-line="149" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -102,18 +96,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/AliPayConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/GoodsOrderVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/UserLoginController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/GoodsVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/userVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/UserVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/OneGoodsVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/InMessageVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Tradeplatformv1Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/OutMessageVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/WebSocketConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/PostArrVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/SportArrVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/service/SportService.java" />
@@ -149,10 +138,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/GoodsSecondVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/service/iplm/UserServiceiplm.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/GoodsDao.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/WebSocketController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/WebSocketController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/WebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/PayController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Tradeplatformv1Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Hello.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/AliPayConfig.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -227,6 +221,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,6 +233,11 @@
             <path>
               <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
               <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -278,85 +279,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="zjw" type="462c0819:PsiDirectoryNode" />
               <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zjw" type="462c0819:PsiDirectoryNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zjw" type="462c0819:PsiDirectoryNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zjw" type="462c0819:PsiDirectoryNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zjw" type="462c0819:PsiDirectoryNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zjw" type="462c0819:PsiDirectoryNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-              <item name="VO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zjw" type="462c0819:PsiDirectoryNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zjw" type="462c0819:PsiDirectoryNode" />
-              <item name="tradeplatformv1" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="iplm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tradeplatformv1" type="b2602c69:ProjectViewProjectNode" />
@@ -369,17 +291,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -559,7 +479,9 @@
       <workItem from="1598242735003" duration="6653000" />
       <workItem from="1598255257699" duration="3042000" />
       <workItem from="1598332582150" duration="791000" />
-      <workItem from="1598424758451" duration="1928000" />
+      <workItem from="1598424758451" duration="6697000" />
+      <workItem from="1598492299366" duration="2582000" />
+      <workItem from="1598496450387" duration="2655000" />
     </task>
     <task id="LOCAL-00001" summary="commit firstly,">
       <created>1594573760134</created>
@@ -614,40 +536,40 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173140000" />
+    <option name="totallyTimeSpent" value="183146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16416308" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1555794" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14109442" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38882554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26339796" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17972103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21781115" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1555794" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990878" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -733,32 +655,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/entity/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/CommentVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/CommentDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="26" column="88" lean-forward="true" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
-          <folding>
-            <marker date="1597926273607" expanded="true" signature="1460:1578" ph="select from comment" />
-            <marker date="1597926273607" expanded="true" signature="1685:1825" ph="SELECT comme... comment" />
-            <marker date="1597926273607" expanded="true" signature="1915:1987" ph="delete from comment... " />
-            <marker date="1597926273607" expanded="true" signature="2158:2715" ph="insert into comment... " />
-            <marker date="1597926273607" expanded="true" signature="4755:5885" ph="update comment... " />
-            <marker date="1597926273607" expanded="true" signature="5997:6611" ph="update comment... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -797,17 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
-          <folding>
-            <marker date="1597992192791" expanded="true" signature="1556:1716" ph="select from post" />
-            <marker date="1597992192791" expanded="true" signature="1821:1909" ph="SELECT FROM post" />
-            <marker date="1597992192791" expanded="true" signature="1821:1922" ph="SELECT FROM post" />
-            <marker date="1597992192791" expanded="true" signature="1821:1923" ph="SELECT FROM post" />
-            <marker date="1597992192791" expanded="true" signature="2031:2184" ph="select postI... post" />
-            <marker date="1597992192791" expanded="true" signature="2274:2336" ph="delete from post... " />
-            <marker date="1597992192791" expanded="true" signature="2497:3079" ph="insert into post... " />
-            <marker date="1597992192791" expanded="true" signature="5297:6530" ph="update post... " />
-            <marker date="1597992192791" expanded="true" signature="6639:7285" ph="update post... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -836,16 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
           <caret line="35" column="31" lean-forward="false" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding>
-            <marker date="1598020143851" expanded="true" signature="1341:1458" ph="select from user" />
-            <marker date="1598020143851" expanded="true" signature="1565:1620" ph="SELECT FROM user" />
-            <marker date="1598020143851" expanded="true" signature="1565:1667" ph="SELECT FROM user" />
-            <marker date="1598020143851" expanded="true" signature="1775:1871" ph="SELECT FROM user" />
-            <marker date="1598020143851" expanded="true" signature="1961:2024" ph="delete from user... " />
-            <marker date="1598020143851" expanded="true" signature="2186:2652" ph="insert into user... " />
-            <marker date="1598020143851" expanded="true" signature="4505:5496" ph="update user... " />
-            <marker date="1598020143851" expanded="true" signature="5605:6122" ph="update user... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -895,10 +774,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#2631#2632#0" expanded="false" />
-            <element signature="e#2658#2659#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,15 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
           <caret line="37" column="56" lean-forward="true" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-          <folding>
-            <marker date="1598077041159" expanded="true" signature="1591:1706" ph="select from order1" />
-            <marker date="1598077041159" expanded="true" signature="1815:2038" ph="SELECT order... order1" />
-            <marker date="1598077041159" expanded="true" signature="2149:2374" ph="SELECT order... order1" />
-            <marker date="1598077041159" expanded="true" signature="2460:2529" ph="delete from order1... " />
-            <marker date="1598077041159" expanded="true" signature="2697:3322" ph="insert into order1... " />
-            <marker date="1598077041159" expanded="true" signature="5554:6815" ph="update order1... " />
-            <marker date="1598077041159" expanded="true" signature="6926:7613" ph="update order1... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -932,73 +798,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/PayController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" column="80" lean-forward="true" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/Friend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/Friend.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-517">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/Authorize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/FrameUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/User.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/Friend.java" />
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/Friend.class" />
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/User.java" />
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/Authorize.java" />
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/FrameUtil.java" />
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/YBOpenApi.jar!/cn/yiban/open/common/User.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/YibanController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/AliPayConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/pojo/VO/UserYibanVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -1018,14 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="138" column="21" lean-forward="false" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="21" />
-          <folding>
-            <element signature="method#trustAllHttpsCertificates#0;class#UserServiceiplm#0" expanded="false" />
-            <element signature="class#miTM#0;class#UserServiceiplm#0" expanded="false" />
-            <element signature="e#2477#2478#0" expanded="false" />
-            <element signature="e#2512#2513#0" expanded="false" />
-            <element signature="e#6385#6386#0" expanded="false" />
-            <element signature="e#6439#6440#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1033,12 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="28" />
-          <folding>
-            <element signature="e#1218#1219#0" expanded="false" />
-            <element signature="e#1251#1252#0" expanded="false" />
-            <element signature="e#1303#1304#0" expanded="false" />
-            <element signature="e#1347#1348#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1046,19 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding>
-            <element signature="e#228#229#0" expanded="false" />
-            <element signature="e#280#281#0" expanded="false" />
-            <element signature="e#324#325#0" expanded="false" />
-            <element signature="e#394#395#0" expanded="false" />
-            <element signature="e#424#425#0" expanded="false" />
-            <element signature="e#470#471#0" expanded="false" />
-            <element signature="e#508#509#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#576#577#0" expanded="false" />
-            <element signature="e#626#627#0" expanded="false" />
-            <element signature="e#668#669#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1066,7 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="18" column="54" lean-forward="false" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,7 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,16 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-          <folding>
-            <marker date="1598267999837" expanded="true" signature="1513:1666" ph="select from goods" />
-            <marker date="1598267999837" expanded="true" signature="1765:1877" ph="SELECT goods... goods" />
-            <marker date="1598267999837" expanded="true" signature="1988:2138" ph="select goods... goods" />
-            <marker date="1598267999837" expanded="true" signature="2257:2337" ph="SELECT goods... goods" />
-            <marker date="1598267999837" expanded="true" signature="2681:2747" ph="delete from goods... " />
-            <marker date="1598267999837" expanded="true" signature="2912:3473" ph="insert into goods... " />
-            <marker date="1598267999837" expanded="true" signature="5581:6748" ph="update goods... " />
-            <marker date="1598267999837" expanded="true" signature="6858:7479" ph="update goods... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1099,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1119,37 +884,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="93" column="21" lean-forward="false" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="85" column="48" lean-forward="false" selection-start-line="85" selection-start-column="48" selection-end-line="85" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/WebSocketController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/WebSocketConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/controller/PayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="42" column="3" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="42" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Hello.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/config/AliPayConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zjw/tradeplatformv1/Tradeplatformv1Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        <state relative-caret-position="161">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding>
+            <element signature="e#472#473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="149" column="24" lean-forward="false" selection-start-line="141" selection-start-column="12" selection-end-line="149" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1160,6 +947,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>tradeplatformv1:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

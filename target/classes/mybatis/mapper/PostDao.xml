@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.tradeplatformv1.dao.PostDao">
+  <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.Post">
+    <id column="postID" jdbcType="INTEGER" property="postid" />
+    <result column="post_head" jdbcType="VARCHAR" property="postHead" />
+    <result column="post_context" jdbcType="VARCHAR" property="postContext" />
+    <result column="post_class" jdbcType="VARCHAR" property="postClass" />
+    <result column="post_image" jdbcType="VARCHAR" property="postImage" />
+    <result column="post_video" jdbcType="VARCHAR" property="postVideo" />
+    <result column="post_verify" jdbcType="VARCHAR" property="postVerify" />
+    <result column="post_likes" jdbcType="INTEGER" property="postLikes" />
+    <result column="post_authorID" jdbcType="VARCHAR" property="postAuthorid" />
+    <result column="post_version" jdbcType="INTEGER" property="postVersion" />
+    <result column="post_createTime" jdbcType="TIMESTAMP" property="postCreatetime" />
+    <result column="post_updateTime" jdbcType="TIMESTAMP" property="postUpdatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    postID, post_head, post_context, post_class, post_image, post_video, post_verify, 
+    post_likes, post_authorID, post_version, post_createTime, post_updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.zjw.tradeplatformv1.pojo.VO.PostVO">
+    select 
+    postID,post_head,post_context,post_class,post_image,post_verify,post_likes,post_authorID
+    from post
+    where postID = #{postid,jdbcType=INTEGER}
+  </select>
+    <select id="selectByPost" resultType="com.zjw.tradeplatformv1.pojo.VO.PostArrVO">
+      SELECT
+      postID,post_head,post_class,post_image,post_likes
+      FROM post
+      limit #{number},6
+    </select>
+    <select id="selectByAuthorID" resultType="com.zjw.tradeplatformv1.pojo.VO.PostVO">
+      select
+      postID,post_head,post_context,post_class,post_image,post_verify,post_likes,post_authorID
+      from post
+    WHERE post_authorID = #{userId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from post
+    where postID = #{postid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="postID" keyProperty="postid" parameterType="com.zjw.tradeplatformv1.pojo.entity.Post" useGeneratedKeys="true">
+    insert into post (post_head, post_context, post_class, 
+      post_image, post_video, post_verify, 
+      post_likes, post_authorID, post_version, 
+      post_createTime, post_updateTime)
+    values (#{postHead,jdbcType=VARCHAR}, #{postContext,jdbcType=VARCHAR}, #{postClass,jdbcType=VARCHAR}, 
+      #{postImage,jdbcType=VARCHAR}, #{postVideo,jdbcType=VARCHAR}, #{postVerify,jdbcType=VARCHAR}, 
+      #{postLikes,jdbcType=INTEGER}, #{postAuthorid,jdbcType=VARCHAR}, #{postVersion,jdbcType=INTEGER}, 
+      #{postCreatetime,jdbcType=TIMESTAMP}, #{postUpdatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="postID" keyProperty="postid" parameterType="com.zjw.tradeplatformv1.pojo.entity.Post" useGeneratedKeys="true">
+    insert into post
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="postHead != null">
+        post_head,
+      </if>
+      <if test="postContext != null">
+        post_context,
+      </if>
+      <if test="postClass != null">
+        post_class,
+      </if>
+      <if test="postImage != null">
+        post_image,
+      </if>
+      <if test="postVideo != null">
+        post_video,
+      </if>
+      <if test="postVerify != null">
+        post_verify,
+      </if>
+      <if test="postLikes != null">
+        post_likes,
+      </if>
+      <if test="postAuthorid != null">
+        post_authorID,
+      </if>
+      <if test="postVersion != null">
+        post_version,
+      </if>
+      <if test="postCreatetime != null">
+        post_createTime,
+      </if>
+      <if test="postUpdatetime != null">
+        post_updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="postHead != null">
+        #{postHead,jdbcType=VARCHAR},
+      </if>
+      <if test="postContext != null">
+        #{postContext,jdbcType=VARCHAR},
+      </if>
+      <if test="postClass != null">
+        #{postClass,jdbcType=VARCHAR},
+      </if>
+      <if test="postImage != null">
+        #{postImage,jdbcType=VARCHAR},
+      </if>
+      <if test="postVideo != null">
+        #{postVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="postVerify != null">
+        #{postVerify,jdbcType=VARCHAR},
+      </if>
+      <if test="postLikes != null">
+        #{postLikes,jdbcType=INTEGER},
+      </if>
+      <if test="postAuthorid != null">
+        #{postAuthorid,jdbcType=VARCHAR},
+      </if>
+      <if test="postVersion != null">
+        #{postVersion,jdbcType=INTEGER},
+      </if>
+      <if test="postCreatetime != null">
+        #{postCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="postUpdatetime != null">
+        #{postUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.tradeplatformv1.pojo.entity.Post">
+    update post
+    <set>
+      <if test="postHead != null">
+        post_head = #{postHead,jdbcType=VARCHAR},
+      </if>
+      <if test="postContext != null">
+        post_context = #{postContext,jdbcType=VARCHAR},
+      </if>
+      <if test="postClass != null">
+        post_class = #{postClass,jdbcType=VARCHAR},
+      </if>
+      <if test="postImage != null">
+        post_image = #{postImage,jdbcType=VARCHAR},
+      </if>
+      <if test="postVideo != null">
+        post_video = #{postVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="postVerify != null">
+        post_verify = #{postVerify,jdbcType=VARCHAR},
+      </if>
+      <if test="postLikes != null">
+        post_likes = #{postLikes,jdbcType=INTEGER},
+      </if>
+      <if test="postAuthorid != null">
+        post_authorID = #{postAuthorid,jdbcType=VARCHAR},
+      </if>
+      <if test="postVersion != null">
+        post_version = #{postVersion,jdbcType=INTEGER},
+      </if>
+      <if test="postCreatetime != null">
+        post_createTime = #{postCreatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="postUpdatetime != null">
+        post_updateTime = #{postUpdatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where postID = #{postid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.Post">
+    update post
+    set post_head = #{postHead,jdbcType=VARCHAR},
+      post_context = #{postContext,jdbcType=VARCHAR},
+      post_class = #{postClass,jdbcType=VARCHAR},
+      post_image = #{postImage,jdbcType=VARCHAR},
+      post_video = #{postVideo,jdbcType=VARCHAR},
+      post_verify = #{postVerify,jdbcType=VARCHAR},
+      post_likes = #{postLikes,jdbcType=INTEGER},
+      post_authorID = #{postAuthorid,jdbcType=VARCHAR},
+      post_version = #{postVersion,jdbcType=INTEGER},
+      post_createTime = #{postCreatetime,jdbcType=TIMESTAMP},
+      post_updateTime = #{postUpdatetime,jdbcType=TIMESTAMP}
+    where postID = #{postid,jdbcType=INTEGER}
+  </update>
+</mapper>

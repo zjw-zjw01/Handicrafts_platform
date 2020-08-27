@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @SpringBootApplication
-@EnableScheduling
 public class Tradeplatformv1Application {
 
 	public static void main(String[] args) {

@@ -70,11 +70,11 @@
 			<version>0.0.3</version>
 		</dependency>-->
 
-		<dependency>
+		<!--<dependency>
 			<groupId>com.alipay.sdk</groupId>
 			<artifactId>alipay-sdk-java</artifactId>
 			<version>3.7.110.ALL</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -82,11 +82,11 @@
 			<version>1.2.7</version>
 		</dependency>
 
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 			<version>2.2.6.RELEASE</version>
-		</dependency>
+		</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -98,14 +98,6 @@
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.6.1</version>
 			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.test</groupId>
-			<artifactId>test</artifactId>
-			<scope>system</scope>
-			<version>1.0</version>
-			<systemPath>${project.basedir}/src/main/resources/lib/YBOpenApi.jar</systemPath>
 		</dependency>
 
 		<dependency>
@@ -121,16 +113,42 @@
 		</dependency>
 	</dependencies>
 
+	<!--<pluginRepositories>
+
+		<pluginRepository>
+
+			<id>alimaven spring plugin</id>
+
+			<name>alimaven spring plugin</name>
+
+			<url>https://maven.aliyun.com/repository/spring-plugin</url>
+
+		</pluginRepository>
+
+	</pluginRepositories>-->
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!--<executions>
+					<execution>
+						<phase>none</phase>
+					</execution>
+				</executions>-->
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
 				<configuration>
-					<!--值为true是指打包时包含scope为system的第三方Jar包-->
-					<includeSystemScope>true</includeSystemScope>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 

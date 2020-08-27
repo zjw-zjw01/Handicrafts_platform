@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.tradeplatformv1.dao.SportDao">
+  <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.Sport">
+    <id column="sport_id" jdbcType="INTEGER" property="sportId" />
+    <result column="sport_name" jdbcType="VARCHAR" property="sportName" />
+    <result column="sport_author" jdbcType="INTEGER" property="sportAuthor" />
+    <result column="sport_introduce_based" jdbcType="VARCHAR" property="sportIntroduceBased" />
+    <result column="sport_context" jdbcType="VARCHAR" property="sportContext" />
+    <result column="sport_attend_way" jdbcType="VARCHAR" property="sportAttendWay" />
+    <result column="sport_conversation_number" jdbcType="VARCHAR" property="sportConversationNumber" />
+    <result column="sport_other" jdbcType="VARCHAR" property="sportOther" />
+    <result column="sport_version" jdbcType="VARCHAR" property="sportVersion" />
+    <result column="sport_create_time" jdbcType="TIMESTAMP" property="sportCreateTime" />
+    <result column="sport_update_time" jdbcType="TIMESTAMP" property="sportUpdateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    sport_id, sport_name, sport_author, sport_introduce_based, sport_context, sport_attend_way, 
+    sport_conversation_number, sport_other, sport_version, sport_create_time, sport_update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sport
+    where sport_id = #{sportId,jdbcType=INTEGER}
+  </select>
+    <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.VO.SportArrVO">
+      SELECT
+      sport_id,sport_name,sport_other
+      FROM sport
+      limit #{page},3
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sport
+    where sport_id = #{sportId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="sport_id" keyProperty="sportId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Sport" useGeneratedKeys="true">
+    insert into sport (sport_name, sport_author, sport_introduce_based, 
+      sport_context, sport_attend_way, sport_conversation_number, 
+      sport_other, sport_version, sport_create_time, 
+      sport_update_time)
+    values (#{sportName,jdbcType=VARCHAR}, #{sportAuthor,jdbcType=INTEGER}, #{sportIntroduceBased,jdbcType=VARCHAR}, 
+      #{sportContext,jdbcType=VARCHAR}, #{sportAttendWay,jdbcType=VARCHAR}, #{sportConversationNumber,jdbcType=VARCHAR}, 
+      #{sportOther,jdbcType=VARCHAR}, #{sportVersion,jdbcType=VARCHAR}, #{sportCreateTime,jdbcType=TIMESTAMP}, 
+      #{sportUpdateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="sport_id" keyProperty="sportId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Sport" useGeneratedKeys="true">
+    insert into sport
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sportName != null">
+        sport_name,
+      </if>
+      <if test="sportAuthor != null">
+        sport_author,
+      </if>
+      <if test="sportIntroduceBased != null">
+        sport_introduce_based,
+      </if>
+      <if test="sportContext != null">
+        sport_context,
+      </if>
+      <if test="sportAttendWay != null">
+        sport_attend_way,
+      </if>
+      <if test="sportConversationNumber != null">
+        sport_conversation_number,
+      </if>
+      <if test="sportOther != null">
+        sport_other,
+      </if>
+      <if test="sportVersion != null">
+        sport_version,
+      </if>
+      <if test="sportCreateTime != null">
+        sport_create_time,
+      </if>
+      <if test="sportUpdateTime != null">
+        sport_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sportName != null">
+        #{sportName,jdbcType=VARCHAR},
+      </if>
+      <if test="sportAuthor != null">
+        #{sportAuthor,jdbcType=INTEGER},
+      </if>
+      <if test="sportIntroduceBased != null">
+        #{sportIntroduceBased,jdbcType=VARCHAR},
+      </if>
+      <if test="sportContext != null">
+        #{sportContext,jdbcType=VARCHAR},
+      </if>
+      <if test="sportAttendWay != null">
+        #{sportAttendWay,jdbcType=VARCHAR},
+      </if>
+      <if test="sportConversationNumber != null">
+        #{sportConversationNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="sportOther != null">
+        #{sportOther,jdbcType=VARCHAR},
+      </if>
+      <if test="sportVersion != null">
+        #{sportVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="sportCreateTime != null">
+        #{sportCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sportUpdateTime != null">
+        #{sportUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.tradeplatformv1.pojo.entity.Sport">
+    update sport
+    <set>
+      <if test="sportName != null">
+        sport_name = #{sportName,jdbcType=VARCHAR},
+      </if>
+      <if test="sportAuthor != null">
+        sport_author = #{sportAuthor,jdbcType=INTEGER},
+      </if>
+      <if test="sportIntroduceBased != null">
+        sport_introduce_based = #{sportIntroduceBased,jdbcType=VARCHAR},
+      </if>
+      <if test="sportContext != null">
+        sport_context = #{sportContext,jdbcType=VARCHAR},
+      </if>
+      <if test="sportAttendWay != null">
+        sport_attend_way = #{sportAttendWay,jdbcType=VARCHAR},
+      </if>
+      <if test="sportConversationNumber != null">
+        sport_conversation_number = #{sportConversationNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="sportOther != null">
+        sport_other = #{sportOther,jdbcType=VARCHAR},
+      </if>
+      <if test="sportVersion != null">
+        sport_version = #{sportVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="sportCreateTime != null">
+        sport_create_time = #{sportCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sportUpdateTime != null">
+        sport_update_time = #{sportUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where sport_id = #{sportId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.Sport">
+    update sport
+    set sport_name = #{sportName,jdbcType=VARCHAR},
+      sport_author = #{sportAuthor,jdbcType=INTEGER},
+      sport_introduce_based = #{sportIntroduceBased,jdbcType=VARCHAR},
+      sport_context = #{sportContext,jdbcType=VARCHAR},
+      sport_attend_way = #{sportAttendWay,jdbcType=VARCHAR},
+      sport_conversation_number = #{sportConversationNumber,jdbcType=VARCHAR},
+      sport_other = #{sportOther,jdbcType=VARCHAR},
+      sport_version = #{sportVersion,jdbcType=VARCHAR},
+      sport_create_time = #{sportCreateTime,jdbcType=TIMESTAMP},
+      sport_update_time = #{sportUpdateTime,jdbcType=TIMESTAMP}
+    where sport_id = #{sportId,jdbcType=INTEGER}
+  </update>
+</mapper>

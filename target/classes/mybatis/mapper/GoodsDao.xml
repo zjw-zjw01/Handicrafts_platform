@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjw.tradeplatformv1.dao.GoodsDao">
+  <resultMap id="BaseResultMap" type="com.zjw.tradeplatformv1.pojo.entity.Goods">
+    <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_type" jdbcType="INTEGER" property="goodsType" />
+    <result column="goods_price" jdbcType="INTEGER" property="goodsPrice" />
+    <result column="goods_amount" jdbcType="VARCHAR" property="goodsAmount" />
+    <result column="goods_author_id" jdbcType="INTEGER" property="goodsAuthorId" />
+    <result column="goods_image" jdbcType="VARCHAR" property="goodsImage" />
+    <result column="goods_content" jdbcType="VARCHAR" property="goodsContent" />
+    <result column="goods_version" jdbcType="INTEGER" property="goodsVersion" />
+    <result column="goods_create_time" jdbcType="TIMESTAMP" property="goodsCreateTime" />
+    <result column="goods_update_time" jdbcType="TIMESTAMP" property="goodsUpdateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    goods_id, goods_name, goods_type, goods_price, goods_amount, goods_author_id, goods_image, 
+    goods_content, goods_version, goods_create_time, goods_update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.zjw.tradeplatformv1.pojo.VO.OneGoodsVO">
+    select 
+    goods_name,goods_price,goods_amount,goods_author_id,goods_image,goods_content
+    from goods
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPage" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsVO">
+    SELECT
+    goods_id,goods_name,goods_image
+    FROM goods
+    WHERE goods_type = #{param2}
+    limit #{param1},6
+  </select>
+    <select id="selectByAuthorID" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsItemVO">
+      select
+    goods_id,goods_name,goods_price,goods_amount,goods_author_id,goods_image,goods_content
+    from goods
+    WHERE goods_author_id = #{userId}
+    </select>
+  <select id="selectGoodsNameByGoodsId" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsSecondVO">
+    SELECT
+    goods_name,goods_image
+    FROM goods
+    WHERE goods_id = #{goodsId}
+  </select>
+  <!--<select id="selectByPage" parameterType="java.lang.Integer" resultType="com.zjw.tradeplatformv1.pojo.VO.GoodsVO">
+    select
+    goods_id,goods_name,goods_image
+    FROM goods
+    WHERE goods_type = #{goodsType}
+    limit #{pageIndex},6
+  </select>-->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from goods
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="goods_id" keyProperty="goodsId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Goods" useGeneratedKeys="true">
+    insert into goods (goods_name, goods_type, goods_price, 
+      goods_amount, goods_author_id, goods_image, 
+      goods_content, goods_version, goods_create_time, 
+      goods_update_time)
+    values (#{goodsName,jdbcType=VARCHAR}, #{goodsType,jdbcType=INTEGER}, #{goodsPrice,jdbcType=INTEGER}, 
+      #{goodsAmount,jdbcType=VARCHAR}, #{goodsAuthorId,jdbcType=INTEGER}, #{goodsImage,jdbcType=VARCHAR}, 
+      #{goodsContent,jdbcType=VARCHAR}, #{goodsVersion,jdbcType=INTEGER}, #{goodsCreateTime,jdbcType=TIMESTAMP}, 
+      #{goodsUpdateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="goods_id" keyProperty="goodsId" parameterType="com.zjw.tradeplatformv1.pojo.entity.Goods" useGeneratedKeys="true">
+    insert into goods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsName != null">
+        goods_name,
+      </if>
+      <if test="goodsType != null">
+        goods_type,
+      </if>
+      <if test="goodsPrice != null">
+        goods_price,
+      </if>
+      <if test="goodsAmount != null">
+        goods_amount,
+      </if>
+      <if test="goodsAuthorId != null">
+        goods_author_id,
+      </if>
+      <if test="goodsImage != null">
+        goods_image,
+      </if>
+      <if test="goodsContent != null">
+        goods_content,
+      </if>
+      <if test="goodsVersion != null">
+        goods_version,
+      </if>
+      <if test="goodsCreateTime != null">
+        goods_create_time,
+      </if>
+      <if test="goodsUpdateTime != null">
+        goods_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType != null">
+        #{goodsType,jdbcType=INTEGER},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=INTEGER},
+      </if>
+      <if test="goodsAmount != null">
+        #{goodsAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsAuthorId != null">
+        #{goodsAuthorId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsImage != null">
+        #{goodsImage,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsContent != null">
+        #{goodsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsVersion != null">
+        #{goodsVersion,jdbcType=INTEGER},
+      </if>
+      <if test="goodsCreateTime != null">
+        #{goodsCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="goodsUpdateTime != null">
+        #{goodsUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zjw.tradeplatformv1.pojo.entity.Goods">
+    update goods
+    <set>
+      <if test="goodsName != null">
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsType != null">
+        goods_type = #{goodsType,jdbcType=INTEGER},
+      </if>
+      <if test="goodsPrice != null">
+        goods_price = #{goodsPrice,jdbcType=INTEGER},
+      </if>
+      <if test="goodsAmount != null">
+        goods_amount = #{goodsAmount,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsAuthorId != null">
+        goods_author_id = #{goodsAuthorId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsImage != null">
+        goods_image = #{goodsImage,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsContent != null">
+        goods_content = #{goodsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsVersion != null">
+        goods_version = #{goodsVersion,jdbcType=INTEGER},
+      </if>
+      <if test="goodsCreateTime != null">
+        goods_create_time = #{goodsCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="goodsUpdateTime != null">
+        goods_update_time = #{goodsUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zjw.tradeplatformv1.pojo.entity.Goods">
+    update goods
+    set goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_type = #{goodsType,jdbcType=INTEGER},
+      goods_price = #{goodsPrice,jdbcType=INTEGER},
+      goods_amount = #{goodsAmount,jdbcType=VARCHAR},
+      goods_author_id = #{goodsAuthorId,jdbcType=INTEGER},
+      goods_image = #{goodsImage,jdbcType=VARCHAR},
+      goods_content = #{goodsContent,jdbcType=VARCHAR},
+      goods_version = #{goodsVersion,jdbcType=INTEGER},
+      goods_create_time = #{goodsCreateTime,jdbcType=TIMESTAMP},
+      goods_update_time = #{goodsUpdateTime,jdbcType=TIMESTAMP}
+    where goods_id = #{goodsId,jdbcType=INTEGER}
+  </update>
+</mapper>

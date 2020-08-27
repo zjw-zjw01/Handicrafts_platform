@@ -1,0 +1,23 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    username: root
+    password: 2241260269zjw
+    url: jdbc:mysql://localhost:3306/mysql_platform_db1?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  thymeleaf:
+      cache: false                   # 这个开发配置为false，避免改了模板还要重启服务器
+
+
+
+#mybatis
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
