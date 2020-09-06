@@ -13,18 +13,15 @@ G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\VO\UserYibanV
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\entity\Order1.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\VO\OutMessageVO.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\entity\Post.java
-G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\controller\WebSocketController.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\dao\UserDao.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\service\UserService.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\service\SportService.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\dao\GoodsDao.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\dao\SportDao.java
-G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\controller\PayController.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\service\GoodsService.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\entity\User.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\VO\PostArrVO.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\VO\GoodsVO.java
-G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\service\AliPayService.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\entity\Goods.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\controller\GoodsController.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\VO\Order1VO.java
@@ -40,6 +37,4 @@ G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\controller\SportCo
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\service\ForumService.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\service\iplm\SportServiceiplm.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\pojo\VO\SportArrVO.java
-G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\service\iplm\AliPayServiceiplm.java
-G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\config\AliPayConfig.java
 G:\IDEA\tradeplatformv1\src\main\java\com\zjw\tradeplatformv1\controller\ForumController.java
